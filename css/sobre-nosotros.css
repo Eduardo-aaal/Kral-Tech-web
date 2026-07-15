@@ -1,0 +1,141 @@
+/* Estilos de la Sección "Sobre Nosotros" usando variables globales */
+.sobre-nosotros {
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  padding: 64px 16px;
+  font-family: var(--fuente-principal);
+}
+
+.contenedor-restringido {
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.encabezado-seccion {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.subtitulo-marca {
+  color: var(--color-texto-hover); /* Tu color de marca */
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.titulo-principal {
+  color: var(--texto-principal);
+  font-size: 32px;
+  font-weight: 800;
+  margin: 8px 0 0 0;
+}
+
+.linea-decorativa {
+  height: 4px;
+  width: 80px;
+  background-color: var(--color-acento);
+  margin: 16px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* El Manifiesto (Textos principales) */
+.manifiesto {
+  margin-bottom: 64px;
+}
+
+.manifiesto p {
+  color: var(--texto-secundario);
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 24px;
+}
+
+/* Pilares */
+.titulo-pilares {
+  font-size: 24px;
+  color: var(--texto-principal);
+  border-bottom: 1px solid var(--bg-superficie-hover);
+  padding-bottom: 8px;
+  margin-bottom: 32px;
+}
+
+.lista-pilares {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tarjeta-pilar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background-color: var(--bg-superficie);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--bg-superficie-hover);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.tarjeta-pilar:hover {
+  background-color: var(--bg-superficie-hover);
+  border-color: var(--color-acento);
+}
+
+.punto-decorativo {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-texto-hover);
+  margin-top: 6px;
+  box-shadow: 0 0 8px var(--color-texto-hover);
+}
+
+.contenido-pilar h4 {
+  color: var(--texto-principal);
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+.contenido-pilar p {
+  color: var(--texto-secundario);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Bloque de Llamado a la Acción (CTA) */
+.bloque-cta {
+  background-color: var(--bg-superficie);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--bg-superficie-hover);
+  text-align: center;
+  margin-top: 64px;
+}
+
+.bloque-cta p {
+  color: var(--texto-secundario);
+  margin: 0 0 24px 0;
+  font-size: 16px;
+}
+
+.boton-cta {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--color-acento);
+  color: var(--texto-principal);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-cta:hover {
+  background-color: var(--color-texto-hover);
+}

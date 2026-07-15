@@ -1,0 +1,56 @@
+/* =========================================
+   RESET.CSS - Normalización del navegador
+   ========================================= */
+
+/* 1. Uso de box-sizing para que el padding y border no aumenten el tamaño de las cajas */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Configuración base del documento */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%; /* Evita que en móviles se auto-ajuste la fuente */
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces internos */
+}
+
+/* 3. Configuración base del body */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed; /* Mejora el rendimiento de carga del texto */
+  line-height: 1.5;
+}
+
+/* 4. Imágenes y contenido multimedia responsivos por defecto */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. Heredar tipografía en elementos de formulario */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Limpieza de listas y enlaces */
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

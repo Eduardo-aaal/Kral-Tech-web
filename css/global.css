@@ -1,0 +1,48 @@
+/* =========================================
+   GLOBAL.CSS - Variables y estilos base
+   ========================================= */
+
+:root {
+  /* --- Paleta de Colores (Modo Oscuro) --- */
+  --bg-principal: #121214;
+  --bg-superficie: #1a1a1e;
+  --bg-superficie-hover: #222227; /* Un tono más claro para efectos al pasar el mouse */
+
+  /* --- Textos y Tipografía --- */
+  --texto-principal: #f5f5f7;
+  --texto-secundario: #a0a0aa;
+  --fuente-principal: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* --- Colores de Acción --- */
+  --color-acento: #0071e3;
+  --color-texto-hover: #007bff; /* Tu color de marca */
+  --btn-afiliado-bg: #fff159;
+  --btn-afiliado-texto: #333333;
+
+  /* --- Medidas Globales --- */
+  --borde-suave: 1px solid #2a2a2e;
+  --radio-esquinas: 12px; /* Para mantener consistencia en botones y tarjetas */
+}
+
+/* --- Aplicación Base --- */
+body {
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  font-family: var(--fuente-principal);
+  -webkit-font-smoothing: antialiased; /* Suaviza los bordes de la fuente en pantallas modernas */
+}
+
+/* --- Tipografía Estándar --- */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--texto-principal);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--texto-secundario);
+  margin-bottom: 1rem;
+}
