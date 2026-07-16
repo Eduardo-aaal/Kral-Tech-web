@@ -50,6 +50,7 @@
   /* Esto crea 3 columnas en escritorio, 1 en celular */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  align-items: start;
 }
 
 .card {
