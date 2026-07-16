@@ -1,0 +1,10 @@
+
+User-agent: *
+
+
+Disallow: /plantilla-1v1-copy.html
+Disallow: /plantilla-top-copy.html
+Disallow: /template.html
+
+
+Sitemap: https://kraltech.net/sitemap.xml
