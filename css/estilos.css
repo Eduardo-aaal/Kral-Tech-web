@@ -148,7 +148,9 @@ tr:hover {
   gap: 15px;
   margin-bottom: 25px;
 }
-
+.pros-contras ul {
+  list-style: circle;
+}
 @media (min-width: 600px) {
   .pros-contras {
     grid-template-columns: 1fr 1fr;
@@ -327,3 +329,97 @@ hr {
   background-color: #8b5cf6;
   color: #ffffff;
 } /* Texto blanco para la medalla morada */
+/* Contenedor Principal del Panel */
+.panel-comparativo {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel-titulo {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+/* Grilla Responsiva: 1 columna en móvil, 2 en pantallas grandes */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Estilo de cada Tarjeta (Estilo Oscuro) */
+.tarjeta-audifono {
+  background-color: #1e1e24; /* Color oscuro alineado al fondo del sitio */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Efecto Hover para interactividad */
+.tarjeta-audifono:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2); /* Sutil brillo azul técnico */
+}
+
+/* Contenedor de la Imagen para mantener proporción */
+.imagen-wrapper {
+  width: 100%;
+  height: 220px; /* Altura fija para que ambas tarjetas queden alineadas */
+  overflow: hidden;
+  background-color: #121214;
+}
+
+.imagen-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ajusta la imagen sin deformarla */
+  transition: transform 0.5s ease;
+}
+
+.tarjeta-audifono:hover .imagen-wrapper img {
+  transform: scale(1.05); /* Sutil zoom al pasar el mouse */
+}
+
+/* Textos e Información */
+.info-tarjeta {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-tarjeta h3 {
+  margin: 0 0 10px 0;
+  color: #00d4ff; /* Azul característico de Kral Tech */
+  font-size: 1.3rem;
+}
+
+.info-tarjeta p {
+  margin: 0;
+  color: #b3b3b3; /* Gris claro para excelente legibilidad */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Optimización para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .panel-comparativo {
+    padding: 10px;
+  }
+  .imagen-wrapper {
+    height: 180px; /* Reduce la altura de la foto en móviles */
+  }
+  .panel-titulo {
+    font-size: 1.5rem;
+  }
+}
