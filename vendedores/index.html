@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kral Tech - Landing Pages | Guia para Vendedores</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="print.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <span class="logo-icon">&#60;/&#62;</span>
+            <span class="logo-text">Kral Tech</span>
+          </div>
+          <nav class="nav-bar">
+            <a href="index.html" class="nav-link active">Landing Pages</a>
+            <a href="corporativas.html" class="nav-link">Corporativas</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">&#128203; Landing Pages</span>
+          <h1>Todo lo que necesitas saber para vender Landing Pages</h1>
+          <p>
+            Conoce los planes, precios, comisiones y bonos para que puedas
+            asesorar a tus clientes de la mejor manera.
+          </p>
+          <button class="btn-print" onclick="printServiceInfo('landing')">
+            &#128424; Imprimir ficha comercial PDF
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">&#128202; Resumen Rapido de Planes</h2>
+        <div class="cards-grid">
+          <div class="plan-card plan-card--compra">
+            <div class="plan-card-header">
+              <span class="plan-badge">Plan Compra</span>
+              <div class="plan-price">
+                <span class="price-amount">$180.000</span>
+                <span class="price-label">pago unico</span>
+              </div>
+            </div>
+            <div class="plan-card-body">
+              <ul class="plan-features">
+                <li>&#9989; Landing page de 1 pagina</li>
+                <li>&#9989; Diseno personalizado</li>
+                <li>&#9989; Diseno responsivo</li>
+                <li>&#9989; Experiencia de usuario</li>
+                <li>&#9989; Certificado SSL</li>
+                <li>&#9989; Google Maps</li>
+                <li>&#9989; SEO basico</li>
+                <li>&#9989; 1 cuenta de correo corporativo</li>
+                <li>
+                  &#9989; Hosting y Dominio: <strong>1 ano incluido</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="plan-card-footer">
+              <div class="info-row">
+                <span class="info-label">&#128338; Tiempo minimo</span>
+                <span class="info-value">Sin tiempo</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#128736;&#65039; Soporte</span>
+                <span class="info-value no">No incluye</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#9999;&#65039; Cambios menores</span>
+                <span class="info-value no">Se cotizan aparte</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#128202; Monitoreo</span>
+                <span class="info-value no">No incluye</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-card plan-card--crecimiento popular">
+            <div class="plan-card-header">
+              <span class="plan-badge popular-badge">&#11088; Mas Popular</span>
+              <span class="plan-badge">Plan Crecimiento</span>
+              <div class="plan-price">
+                <span class="price-amount">$90.000</span>
+                <span class="price-label">+ $20.000 / mes</span>
+              </div>
+            </div>
+            <div class="plan-card-body">
+              <ul class="plan-features">
+                <li>&#9989; Landing page de 1 pagina</li>
+                <li>&#9989; Diseno personalizado</li>
+                <li>&#9989; Diseno responsivo</li>
+                <li>&#9989; Experiencia de usuario</li>
+                <li>&#9989; Certificado SSL</li>
+                <li>&#9989; Google Maps</li>
+                <li>&#9989; SEO basico</li>
+                <li>&#9989; 1 cuenta de correo corporativo</li>
+                <li>
+                  &#9989; Hosting y Dominio:
+                  <strong>Mientras dure el plan</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="plan-card-footer">
+              <div class="info-row">
+                <span class="info-label">&#128338; Tiempo minimo</span>
+                <span class="info-value">6 meses</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#128736;&#65039; Soporte</span>
+                <span class="info-value yes">Prioritario</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#9999;&#65039; Cambios menores</span>
+                <span class="info-value yes">2 al mes</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#128202; Monitoreo</span>
+                <span class="info-value yes">Mensual</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-card plan-card--emprende">
+            <div class="plan-card-header">
+              <span class="plan-badge">Plan Emprende</span>
+              <div class="plan-price">
+                <span class="price-amount">$0</span>
+                <span class="price-label">+ $24.990 / mes</span>
+              </div>
+              <p class="price-alt">O $10.000 por 4 meses</p>
+            </div>
+            <div class="plan-card-body">
+              <ul class="plan-features">
+                <li>&#9989; Landing page de 1 pagina</li>
+                <li>&#9989; Diseno personalizado</li>
+                <li>&#9989; Diseno responsivo</li>
+                <li>&#9989; Experiencia de usuario</li>
+                <li>&#9989; Certificado SSL</li>
+                <li>&#9989; Google Maps</li>
+                <li>&#9989; SEO basico</li>
+                <li>&#9989; 1 cuenta de correo corporativo</li>
+                <li>
+                  &#9989; Hosting y Dominio:
+                  <strong>Mientras dure el plan</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="plan-card-footer">
+              <div class="info-row">
+                <span class="info-label">&#128338; Tiempo minimo</span>
+                <span class="info-value">12 meses</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#128736;&#65039; Soporte</span>
+                <span class="info-value yes">Prioritario</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#9999;&#65039; Cambios menores</span>
+                <span class="info-value yes">2 al mes</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">&#128202; Monitoreo</span>
+                <span class="info-value yes">Mensual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section-title">&#128203; Comparativa de Planes</h2>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Caracteristica</th>
+                <th class="col-compra">Plan Compra</th>
+                <th class="col-crecimiento">Plan Crecimiento</th>
+                <th class="col-emprende">Plan Emprende</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">Inversion</td>
+                <td class="col-compra">$180.000</td>
+                <td class="col-crecimiento">$90.000 + $20.000/mes</td>
+                <td class="col-emprende">$0 + $24.990/mes</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Hosting y Dominio</td>
+                <td class="col-compra">1 ano incluido</td>
+                <td class="col-crecimiento">Mientras dure el plan</td>
+                <td class="col-emprende">Mientras dure el plan</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Soporte</td>
+                <td class="col-compra">
+                  <span class="tag tag-no">No incluye</span>
+                </td>
+                <td class="col-crecimiento">
+                  <span class="tag tag-yes">Prioritario</span>
+                </td>
+                <td class="col-emprende">
+                  <span class="tag tag-yes">Prioritario</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="feature-name">Cambios menores</td>
+                <td class="col-compra">Se cotizan aparte</td>
+                <td class="col-crecimiento">2 al mes</td>
+                <td class="col-emprende">2 al mes</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Monitoreo</td>
+                <td class="col-compra">
+                  <span class="tag tag-no">No incluye</span>
+                </td>
+                <td class="col-crecimiento">
+                  <span class="tag tag-yes">Mensual</span>
+                </td>
+                <td class="col-emprende">
+                  <span class="tag tag-yes">Mensual</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="feature-name">Tiempo minimo</td>
+                <td class="col-compra">Sin tiempo</td>
+                <td class="col-crecimiento">6 meses</td>
+                <td class="col-emprende">12 meses</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">&#128176; Comisiones por Venta</h2>
+        <p class="section-desc">
+          Esto es lo que ganas por cada plan que vendas:
+        </p>
+        <div class="commissions-grid">
+          <div class="commission-card">
+            <div class="commission-icon">&#128722;</div>
+            <h3 class="commission-title">Plan Compra</h3>
+            <div class="commission-amount">$40.000</div>
+            <p class="commission-desc">por cada venta</p>
+          </div>
+          <div class="commission-card highlight">
+            <div class="commission-icon">&#128200;</div>
+            <h3 class="commission-title">Plan Crecimiento</h3>
+            <div class="commission-amount">$40.000</div>
+            <p class="commission-desc">por cada venta</p>
+            <div class="commission-renewal">
+              + $10.000 / ano si el cliente renueva
+            </div>
+          </div>
+          <div class="commission-card">
+            <div class="commission-icon">&#128640;</div>
+            <h3 class="commission-title">Plan Emprende</h3>
+            <div class="commission-amount">$10.000</div>
+            <p class="commission-desc">por cada mes durante 4 meses</p>
+            <div class="commission-total">Total: $40.000</div>
+            <div class="commission-renewal">
+              + $10.000 / ano si el cliente renueva
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section-title">&#127942; Bonos Mensuales</h2>
+        <p class="section-desc">
+          Gana bonos adicionales segun la cantidad de ventas que hagas en un
+          mes:
+        </p>
+        <div class="bonus-grid">
+          <div class="bonus-card">
+            <div class="bonus-icon">&#129352;</div>
+            <div class="bonus-meta">3 ventas</div>
+            <div class="bonus-amount">$10.000</div>
+            <div class="bonus-label">Bono mensual</div>
+          </div>
+          <div class="bonus-card">
+            <div class="bonus-icon">&#129353;</div>
+            <div class="bonus-meta">5 ventas</div>
+            <div class="bonus-amount">$20.000</div>
+            <div class="bonus-label">Bono mensual</div>
+          </div>
+          <div class="bonus-card gold">
+            <div class="bonus-icon">&#129351;</div>
+            <div class="bonus-meta">10 ventas</div>
+            <div class="bonus-amount">$45.000</div>
+            <div class="bonus-label">Bono mensual</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">&#128200; Ejemplos de Ganancias</h2>
+        <p class="section-desc">
+          Simula cuanto podrias ganar segun tus ventas mensuales:
+        </p>
+        <div class="examples-grid">
+          <div class="example-card">
+            <div class="example-header">
+              <span class="example-level">Nivel 1</span>
+              <span class="example-ventas">3 ventas/mes</span>
+            </div>
+            <div class="example-body">
+              <div class="example-row">
+                <span>3 Planes Crecimiento</span>
+                <span class="example-val">$120.000</span>
+              </div>
+              <div class="example-row">
+                <span>Bono por 3 ventas</span>
+                <span class="example-val">+ $10.000</span>
+              </div>
+              <div class="example-divider"></div>
+              <div class="example-row total">
+                <span>Total mensual</span>
+                <span class="example-val">$130.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-header">
+              <span class="example-level">Nivel 2</span>
+              <span class="example-ventas">5 ventas/mes</span>
+            </div>
+            <div class="example-body">
+              <div class="example-row">
+                <span>5 Planes Crecimiento</span>
+                <span class="example-val">$200.000</span>
+              </div>
+              <div class="example-row">
+                <span>Bono por 5 ventas</span>
+                <span class="example-val">+ $20.000</span>
+              </div>
+              <div class="example-divider"></div>
+              <div class="example-row total">
+                <span>Total mensual</span>
+                <span class="example-val">$220.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-header">
+              <span class="example-level">Nivel 3</span>
+              <span class="example-ventas">10 ventas/mes</span>
+            </div>
+            <div class="example-body">
+              <div class="example-row">
+                <span>10 Planes Crecimiento</span>
+                <span class="example-val">$400.000</span>
+              </div>
+              <div class="example-row">
+                <span>Bono por 10 ventas</span>
+                <span class="example-val">+ $45.000</span>
+              </div>
+              <div class="example-divider"></div>
+              <div class="example-row total">
+                <span>Total mensual</span>
+                <span class="example-val">$445.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section-title">
+          &#9888;&#65039; Penalizacion por Cancelacion Anticipada
+        </h2>
+        <p class="section-desc">
+          Si un cliente contrata un plan mensual y quiere cancelar antes del
+          tiempo minimo:
+        </p>
+        <div class="penalty-cards">
+          <div class="penalty-card">
+            <div class="penalty-icon">&#128200;</div>
+            <h3>Plan Crecimiento</h3>
+            <p class="penalty-detail">
+              Tiempo minimo: <strong>6 meses</strong>
+            </p>
+            <p class="penalty-detail">
+              Si cancela antes, debe pagar la diferencia hasta completar
+              <strong>$180.000</strong> (equivalente al Plan Compra)
+            </p>
+            <div class="penalty-example">
+              <strong>Ejemplo:</strong> Si cancela al mes 3, ha pagado $90.000 +
+              $60.000 = $150.000. Debe pagar $30.000 adicionales.
+            </div>
+          </div>
+          <div class="penalty-card">
+            <div class="penalty-icon">&#128640;</div>
+            <h3>Plan Emprende</h3>
+            <p class="penalty-detail">
+              Tiempo minimo: <strong>12 meses</strong>
+            </p>
+            <p class="penalty-detail">
+              Si cancela antes, debe pagar la diferencia hasta completar
+              <strong>$180.000</strong> (equivalente al Plan Compra)
+            </p>
+            <div class="penalty-example">
+              <strong>Ejemplo:</strong> Si cancela al mes 6, ha pagado $0 +
+              $149.940 = $149.940. Debe pagar $30.060 adicionales.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">&#127919; A quien venderle?</h2>
+        <p class="section-desc">
+          Estos son los clientes ideales para Landing Pages:
+        </p>
+        <div class="target-grid">
+          <div class="target-card">
+            <span class="target-icon">&#127860;&#65039;</span>
+            <span class="target-name">Restaurantes</span>
+          </div>
+          <div class="target-card">
+            <span class="target-icon">&#128187;</span>
+            <span class="target-name">Freelancers</span>
+          </div>
+          <div class="target-card">
+            <span class="target-icon">&#9749;</span>
+            <span class="target-name">Cafeterias</span>
+          </div>
+          <div class="target-card">
+            <span class="target-icon">&#127959;&#65039;</span>
+            <span class="target-name">Constructoras</span>
+          </div>
+          <div class="target-card">
+            <span class="target-icon">&#127970;</span>
+            <span class="target-name"
+              >Empresas que quieran<br />atraer clientes online</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section-title">&#128161; Tips para Vender Landing Pages</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-number">1</div>
+            <h3>Identifica sus necesidades</h3>
+            <p>
+              Pregunta si ya tienen pagina web, que problemas han tenido y que
+              esperan lograr.
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">2</div>
+            <h3>Recomienda el plan ideal</h3>
+            <p>
+              El <strong>Plan Crecimiento</strong> es el mas popular por su
+              equilibrio entre precio y beneficios.
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">3</div>
+            <h3>Usa las muestras</h3>
+            <p>
+              Muestra los ejemplos de cafeteria y constructora para que vean la
+              calidad del trabajo.
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">4</div>
+            <h3>Destaca el valor</h3>
+            <p>
+              Por menos de $1.000 diarios pueden tener una pagina profesional
+              con hosting y dominio.
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">5</div>
+            <h3>Cierra con confianza</h3>
+            <p>
+              Ofrece el Plan Emprende si el cliente duda por el presupuesto. ¡Es
+              una inversion minima!
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">6</div>
+            <h3>Explica la penalizacion</h3>
+            <p>
+              Deja claro que si cancelan antes del tiempo minimo, deben pagar la
+              diferencia hasta el valor del Plan Compra.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-icon">&#60;/&#62;</span>
+            <span class="logo-text">Kral Tech</span>
+          </div>
+          <p class="footer-text">Guia para Vendedores — Landing Pages</p>
+          <p class="footer-copy">
+            &copy; 2026 Kral Tech. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Página principal -->
+  <!-- Página principal - Kral Tech Solutions -->
   <url>
-    <loc>https://kraltech.net/index.html</loc>
+    <loc>https://kraltech.net/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- Categorías y Sobre Nosotros -->
+  <!-- Páginas de vendedores -->
   <url>
-    <loc>https://kraltech.net/categorias.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://kraltech.net/vendedores/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kraltech.net/sobre-nosotros.html</loc>
+    <loc>https://kraltech.net/vendedores/corporativas.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   
-  <!-- Sub-páginas de Audífonos -->
+  <!-- Muestras de proyectos -->
   <url>
-    <loc>https://kraltech.net/categorias/audifonos/audifonos.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kraltech.net/categorias/audifonos/todo-presupuestos.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kraltech.net/categorias/audifonos/xiaomi-vs-blik-15mil.html</loc>
+    <loc>https://kraltech.net/Muestras/cafeteria/index.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kraltech.net/Muestras/constructora/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

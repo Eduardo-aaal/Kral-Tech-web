@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Constructora Modelo - Empresa líder en construcción residencial, comercial y remodelaciones. Más de 15 años de experiencia. Portafolio de proyectos, servicios y contacto."
+    />
+    <meta
+      name="keywords"
+      content="constructora, construcción, proyectos inmobiliarios, edificios, casas, remodelaciones, Chile, empresa constructora"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://kraltech.net/Muestras/constructora/index.html"
+    />
+    <meta
+      property="og:title"
+      content="Constructora Modelo | Proyectos y Servicios de Construcción"
+    />
+    <meta
+      property="og:description"
+      content="Empresa constructora con más de 15 años de experiencia. Conoce nuestros proyectos, servicios y solicita una cotización."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <title>Constructora Modelo | Proyectos y Servicios de Construcción</title>
+    <style>
+      /* ===== RESET & BASE ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* ===== NAVBAR ===== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #fff;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        padding: 0 1.5rem;
+      }
+      .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      .navbar .logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #1a1a2e;
+        letter-spacing: -0.5px;
+      }
+      .navbar .logo span {
+        color: #e94560;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+      }
+      .nav-links a {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #555;
+        transition: all 0.2s;
+      }
+      .nav-links a:hover {
+        background: #1a1a2e;
+        color: #fff;
+      }
+      .nav-links .cta {
+        background: #e94560;
+        color: #fff;
+      }
+      .nav-links .cta:hover {
+        background: #d63851;
+      }
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+      .nav-toggle span {
+        width: 26px;
+        height: 2.5px;
+        background: #1a1a2e;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        margin-top: 70px;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+          url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80")
+            center / cover no-repeat;
+        color: #fff;
+        text-align: center;
+        padding: 6rem 1.5rem 5rem;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      .hero p {
+        font-size: 1.15rem;
+        opacity: 0.9;
+        margin: 1rem auto 2rem;
+        max-width: 600px;
+      }
+      .hero .btn-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero .btn {
+        display: inline-block;
+        padding: 0.9rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.25s;
+      }
+      .hero .btn-primary {
+        background: #e94560;
+        color: #fff;
+      }
+      .hero .btn-primary:hover {
+        background: #d63851;
+        transform: translateY(-2px);
+      }
+      .hero .btn-secondary {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .hero .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+      }
+
+      /* ===== SECCIONES ===== */
+      .section {
+        padding: 4.5rem 0;
+      }
+      .section-alt {
+        background: #fff;
+      }
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .section-subtitle {
+        text-align: center;
+        color: #777;
+        font-size: 1rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ===== NOSOTROS ===== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .about-grid img {
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+      }
+      .about-text h3 {
+        font-size: 1.4rem;
+        color: #1a1a2e;
+        margin-bottom: 1rem;
+      }
+      .about-text p {
+        color: #555;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .about-stats .stat {
+        text-align: center;
+        background: #f0f0f5;
+        padding: 1.2rem 0.5rem;
+        border-radius: 12px;
+      }
+      .about-stats .stat strong {
+        display: block;
+        font-size: 1.6rem;
+        color: #e94560;
+        font-weight: 800;
+      }
+      .about-stats .stat span {
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      /* ===== SERVICIOS ===== */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .service-card {
+        background: #f8f9fa;
+        border-radius: 14px;
+        padding: 2rem 1.5rem;
+        transition: all 0.3s;
+        border: 1px solid #eee;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        border-color: #e94560;
+      }
+      .service-card .icon {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
+      .service-card h3 {
+        font-size: 1.15rem;
+        color: #1a1a2e;
+        margin-bottom: 0.5rem;
+      }
+      .service-card p {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      /* ===== PROYECTOS ===== */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+      .project-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid #eee;
+        transition: all 0.3s;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+      }
+      .project-card .project-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .project-card .project-body {
+        padding: 1.5rem;
+      }
+      .project-card .project-body h3 {
+        font-size: 1.15rem;
+        color: #1a1a2e;
+        margin-bottom: 0.3rem;
+      }
+      .project-card .project-body .location {
+        color: #e94560;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .project-card .project-body p {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+      }
+      .project-card .project-body .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .project-card .project-body .tags span {
+        background: #f0f0f5;
+        color: #555;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 50px;
+        font-weight: 500;
+      }
+
+      /* ===== GALERÍA ===== */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+      .gallery-grid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+      .gallery-grid img:hover {
+        transform: scale(1.03);
+      }
+
+      /* ===== CONTACTO ===== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+      .contact-info h3 {
+        font-size: 1.3rem;
+        color: #1a1a2e;
+        margin-bottom: 1.5rem;
+      }
+      .contact-info .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+      .contact-info .info-item .emoji {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .contact-info .info-item strong {
+        display: block;
+        color: #1a1a2e;
+        font-size: 0.9rem;
+      }
+      .contact-info .info-item span {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .contact-info .info-item a {
+        color: #e94560;
+        font-weight: 500;
+      }
+      .contact-info .info-item a:hover {
+        text-decoration: underline;
+      }
+      .contact-form {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 16px;
+        border: 1px solid #eee;
+      }
+      .contact-form h3 {
+        font-size: 1.15rem;
+        color: #1a1a2e;
+        margin-bottom: 1.2rem;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        transition: border-color 0.2s;
+        outline: none;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #e94560;
+      }
+      .contact-form textarea {
+        height: 100px;
+        resize: vertical;
+      }
+      .contact-form .btn-submit {
+        width: 100%;
+        padding: 0.9rem;
+        background: #e94560;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.25s;
+      }
+      .contact-form .btn-submit:hover {
+        background: #d63851;
+      }
+
+      /* ===== WHATSAPP FLOAT ===== */
+      .wa-float {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 200;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        transition: transform 0.25s;
+      }
+      .wa-float:hover {
+        transform: scale(1.08);
+      }
+      .wa-float svg {
+        width: 28px;
+        height: 28px;
+        fill: #fff;
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background: #1a1a2e;
+        color: #ccc;
+        padding: 3rem 1.5rem 1.5rem;
+      }
+      .footer-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .footer-brand h4 {
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+      }
+      .footer-brand h4 span {
+        color: #e94560;
+      }
+      .footer-brand p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        max-width: 300px;
+      }
+      .footer-col h5 {
+        color: #fff;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+      .footer-col a {
+        display: block;
+        color: #aaa;
+        font-size: 0.88rem;
+        padding: 0.3rem 0;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: #e94560;
+      }
+      .footer-bottom {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.85rem;
+        color: #888;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 860px) {
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          background: #fff;
+          padding: 1rem 1.5rem;
+          border-bottom: 1px solid #eee;
+          transform: translateY(-120%);
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.3s;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .nav-links.open {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .nav-toggle {
+          display: flex;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .about-grid img {
+          height: 250px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .hero {
+          padding: 4rem 1rem 3rem;
+        }
+        .hero h1 {
+          font-size: 1.6rem;
+        }
+        .section {
+          padding: 3rem 0;
+        }
+        .section-title {
+          font-size: 1.4rem;
+        }
+        .about-stats {
+          grid-template-columns: 1fr;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem;
+        }
+        .gallery-grid img {
+          height: 140px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Constructora <span>Modelo</span></a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto" class="cta">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <h1>Construimos el futuro de tu empresa</h1>
+      <p>
+        Más de 15 años construyendo proyectos residenciales, comerciales e
+        industriales con los más altos estándares de calidad y seguridad.
+      </p>
+      <div class="btn-group">
+        <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+        <a href="#contacto" class="btn btn-secondary">Solicitar cotización</a>
+      </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="section" id="nosotros">
+      <div class="container">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <p class="section-subtitle">
+          Conoce la historia y los valores que nos respaldan
+        </p>
+        <div class="about-grid">
+          <img
+            src="https://images.unsplash.com/photo-1541888946425-d81bbd40e9b1?w=700&q=80"
+            alt="Equipo de construcción trabajando en obra"
+            loading="lazy"
+          />
+          <div class="about-text">
+            <h3>Más de 15 años construyendo confianza</h3>
+            <p>
+              En <strong>Constructora Modelo</strong> nos especializamos en el
+              desarrollo de proyectos de construcción residencial, comercial e
+              industrial. Desde nuestra fundación en 2009, hemos entregado más
+              de 120 proyectos exitosos a lo largo de Chile.
+            </p>
+            <p>
+              Nuestro equipo está conformado por ingenieros civiles,
+              arquitectos, técnicos en construcción y personal altamente
+              calificado que trabaja con los más altos estándares de calidad,
+              seguridad y sustentabilidad.
+            </p>
+            <p>
+              Creemos en la transparencia, el compromiso con los plazos y la
+              satisfacción de nuestros clientes como pilares fundamentales de
+              nuestro trabajo.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <strong>120+</strong>
+                <span>Proyectos entregados</span>
+              </div>
+              <div class="stat">
+                <strong>15+</strong>
+                <span>Años de experiencia</span>
+              </div>
+              <div class="stat">
+                <strong>98%</strong>
+                <span>Clientes satisfechos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="section section-alt" id="servicios">
+      <div class="container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">
+          Ofrecemos soluciones integrales para todo tipo de proyectos
+        </p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="icon">🏠</div>
+            <h3>Construcción Residencial</h3>
+            <p>
+              Casas particulares, edificios de departamentos y conjuntos
+              habitacionales con diseño moderno y acabados de primera calidad.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🏢</div>
+            <h3>Proyectos Comerciales</h3>
+            <p>
+              Edificios corporativos, centros comerciales, locales y bodegas
+              industriales diseñados para maximizar la funcionalidad.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🔨</div>
+            <h3>Remodelaciones</h3>
+            <p>
+              Renovación y ampliación de espacios existentes. Actualizamos tu
+              hogar o negocio con diseño contemporáneo.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">📋</div>
+            <h3>Gestión de Proyectos</h3>
+            <p>
+              Asesoría y administración integral de proyectos: presupuestos,
+              permisos, planificación y ejecución.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">♻️</div>
+            <h3>Construcción Sustentable</h3>
+            <p>
+              Edificación con materiales ecológicos, eficiencia energética y
+              certificación de sustentabilidad.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🔧</div>
+            <h3>Mantenimiento</h3>
+            <p>
+              Servicio de mantención preventiva y correctiva para propiedades
+              residenciales y comerciales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <p class="section-subtitle">
+          Conoce algunos de los proyectos que hemos realizado para nuestros
+          clientes
+        </p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img
+              class="project-img"
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+              alt="Edificio residencial Altavista"
+              loading="lazy"
+            />
+            <div class="project-body">
+              <h3>Edificio Altavista</h3>
+              <div class="location">📍 Las Condes, Santiago</div>
+              <p>
+                Conjunto residencial de 12 pisos con 48 departamentos, áreas
+                verdes, piscina temperada y gimnasio. Construido en 18 meses.
+              </p>
+              <div class="tags">
+                <span>12 pisos</span>
+                <span>48 deptos.</span>
+                <span>Áreas verdes</span>
+                <span>Piscina</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              class="project-img"
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80"
+              alt="Casas Parque comunidad residencial"
+              loading="lazy"
+            />
+            <div class="project-body">
+              <h3>Casas Parque</h3>
+              <div class="location">📍 Peñalolén, Santiago</div>
+              <p>
+                Comunidad de 30 viviendas unifamiliares con diseño sustentable,
+                paneles solares y áreas comunes. Proyecto certificado CES.
+              </p>
+              <div class="tags">
+                <span>30 viviendas</span>
+                <span>Sustentable</span>
+                <span>Paneles solares</span>
+                <span>Áreas comunes</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              class="project-img"
+              src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80"
+              alt="Plaza Comercial centro comercial"
+              loading="lazy"
+            />
+            <div class="project-body">
+              <h3>Plaza Comercial Centro</h3>
+              <div class="location">📍 Providencia, Santiago</div>
+              <p>
+                Centro comercial de 5.000 m² con 30 locales comerciales, patio
+                de comidas, estacionamientos subterráneos y terraza.
+              </p>
+              <div class="tags">
+                <span>5.000 m²</span>
+                <span>30 locales</span>
+                <span>Patio comidas</span>
+                <span>Estacionamientos</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              class="project-img"
+              src="https://images.unsplash.com/photo-1600566753086-00f18f6b1252?w=600&q=80"
+              alt="Edificio corporativo empresarial"
+              loading="lazy"
+            />
+            <div class="project-body">
+              <h3>Torre Corporativa Norte</h3>
+              <div class="location">📍 Huechuraba, Santiago</div>
+              <p>
+                Edificio de oficinas clase A de 8 pisos con lobby de doble
+                altura, eficiencia energética y certificación LEED.
+              </p>
+              <div class="tags">
+                <span>8 pisos</span>
+                <span>Oficinas</span>
+                <span>LEED</span>
+                <span>Eficiencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section class="section section-alt" id="galeria">
+      <div class="container">
+        <h2 class="section-title">Galería de Proyectos</h2>
+        <p class="section-subtitle">
+          Imágenes de nuestros proyectos en distintas etapas de construcción
+        </p>
+        <div class="gallery-grid">
+          <img
+            src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&q=80"
+            alt="Edificio moderno con fachada de vidrio"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80"
+            alt="Casa residencial moderna"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80"
+            alt="Interior de casa moderna"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80"
+            alt="Construcción en altura"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=400&q=80"
+            alt="Obra en construcción"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&q=80"
+            alt="Fachada de casa con jardín"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80"
+            alt="Edificio de departamentos"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&q=80"
+            alt="Cocina moderna amoblada"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">
+          Estamos listos para escuchar tu proyecto. Háblanos sin compromiso.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Información de contacto</h3>
+            <div class="info-item">
+              <div class="emoji">📍</div>
+              <div>
+                <strong>Dirección</strong>
+                <span>Av. Apoquindo 4500, Piso 8, Las Condes, Santiago</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="emoji">📞</div>
+              <div>
+                <strong>Teléfono</strong>
+                <a href="tel:+56221234567">+56 2 2123 4567</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="emoji">📱</div>
+              <div>
+                <strong>WhatsApp</strong>
+                <a
+                  href="https://wa.me/56972251219?text=Hola%2C%20vi%20la%20muestra%20de%20Constructora%20y%20me%20interesa%20una%20p%C3%A1gina%20similar%20para%20mi%20empresa."
+                  target="_blank"
+                  rel="noopener"
+                  >+56 9 7225 1219</a
+                >
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="emoji">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:contacto@constructoramodelo.cl"
+                  >contacto@constructoramodelo.cl</a
+                >
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="emoji">🕐</div>
+              <div>
+                <strong>Horario de atención</strong>
+                <span
+                  >Lunes a Viernes: 8:30 - 18:30<br />Sábados: 9:00 -
+                  13:00</span
+                >
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <h3>Envíanos un mensaje</h3>
+            <input
+              type="text"
+              id="formName"
+              placeholder="Nombre completo"
+              required
+            />
+            <input
+              type="email"
+              id="formEmail"
+              placeholder="Correo electrónico"
+              required
+            />
+            <input type="tel" id="formPhone" placeholder="Teléfono" />
+            <select
+              id="formProject"
+              style="
+                width: 100%;
+                padding: 0.8rem 1rem;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                font-family: inherit;
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+                outline: none;
+                background: #fff;
+              "
+            >
+              <option value="">Tipo de proyecto</option>
+              <option>Construcción residencial</option>
+              <option>Proyecto comercial</option>
+              <option>Remodelación</option>
+              <option>Mantenimiento</option>
+              <option>Otro</option>
+            </select>
+            <textarea
+              id="formMessage"
+              placeholder="Cuéntanos sobre tu proyecto..."
+              required
+            ></textarea>
+            <button type="submit" class="btn-submit">
+              Enviar mensaje por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a
+      class="wa-float"
+      href="https://wa.me/56972251219?text=Hola%2C%20vi%20la%20muestra%20de%20Constructora%20y%20me%20interesa%20una%20p%C3%A1gina%20similar%20para%20mi%20empresa."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Constructora <span>Modelo</span></h4>
+          <p>
+            Más de 15 años construyendo los espacios que hacen crecer a las
+            personas y las empresas en Chile.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#galeria">Galería</a>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <a href="#servicios">Construcción residencial</a>
+          <a href="#servicios">Proyectos comerciales</a>
+          <a href="#servicios">Remodelaciones</a>
+          <a href="#servicios">Mantenimiento</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <a href="tel:+56221234567">+56 2 2123 4567</a>
+          <a href="mailto:contacto@constructoramodelo.cl"
+            >contacto@constructoramodelo.cl</a
+          >
+          <a href="https://wa.me/56972251219" target="_blank" rel="noopener"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Constructora Modelo — Sitio de muestra desarrollado por
+          Kral Tech Solutions
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navToggle = document.getElementById("navToggle");
+        var navLinks = document.getElementById("navLinks");
+
+        navToggle.addEventListener("click", function () {
+          var isOpen = navLinks.classList.toggle("open");
+          navToggle.classList.toggle("active", isOpen);
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("open");
+            navToggle.classList.remove("active");
+            navToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        // ===== Formulario de contacto → WhatsApp =====
+        var contactForm = document.getElementById("contactForm");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var name = document.getElementById("formName").value.trim();
+            var email = document.getElementById("formEmail").value.trim();
+            var phone = document.getElementById("formPhone").value.trim();
+            var project = document.getElementById("formProject").value;
+            var message = document.getElementById("formMessage").value.trim();
+
+            var waMessage =
+              "🏗️ *Nuevo contacto - Constructora Modelo* 🏗️\n\n" +
+              "*Nombre:* " +
+              name +
+              "\n" +
+              "*Email:* " +
+              email +
+              "\n" +
+              (phone ? "*Teléfono:* " + phone + "\n" : "") +
+              (project ? "*Tipo de proyecto:* " + project + "\n" : "") +
+              "*Mensaje:* " +
+              message;
+
+            var encoded = encodeURIComponent(waMessage);
+            var url = "https://wa.me/56972251219?text=" + encoded;
+            window.open(url, "_blank");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
