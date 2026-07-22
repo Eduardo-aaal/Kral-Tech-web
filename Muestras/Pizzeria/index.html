@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== TITLE & DESCRIPTION ===== -->
+    <title>Pizzería Artesanal | Ejemplo de Menú Digital</title>
+    <meta
+      name="description"
+      content="Pizzería artesanal con horno a leña - Ejemplo de menú digital con carrito de compras y pedidos por WhatsApp. Página de muestra."
+    />
+    <meta
+      name="keywords"
+      content="pizza, pizzeria, pizza artesanal, menu digital, ejemplo, muestra"
+    />
+    <meta name="author" content="Kral Tech Solutions" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://kraltech.net/Muestras/Pizzeria/" />
+
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Pizzería Artesanal | Ejemplo de Menú Digital"
+    />
+    <meta
+      property="og:description"
+      content="Menú digital con carrito de compras y pedidos por WhatsApp. Página de muestra."
+    />
+    <meta property="og:url" content="https://kraltech.net/Muestras/Pizzeria/" />
+    <meta property="og:site_name" content="Pizzería Artesanal - Muestra" />
+    <meta property="og:locale" content="es_CL" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&h=630&fit=crop"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- ===== TWITTER CARDS ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pizzería Artesanal | Menú Digital" />
+    <meta
+      name="twitter:description"
+      content="Menú digital con carrito de compras. Página de muestra."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&h=630&fit=crop"
+    />
+
+    <!-- ===== FAVICON ===== -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍕%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍕%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- ===== FONTS & STYLES ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+      <a href="#hero" class="logo">
+        <i class="fas fa-pizza-slice"></i>
+        Pizzería Artesanal
+      </a>
+      <div class="nav-toggle" id="navToggle" aria-label="Menú de navegación">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="nav">
+        <a href="#menu">Menú</a>
+        <a href="#info">Horarios</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-content">
+        <span class="hero-tag">Pizza Artesanal</span>
+        <h1>Pizzería<br /><span>Artesanal</span></h1>
+        <p>
+          Pizzas artesanales horneadas a la leña con ingredientes frescos y el
+          verdadero sabor italiano.
+        </p>
+        <div class="hero-btns">
+          <a href="#menu" class="btn btn-primary">
+            <i class="fas fa-pizza-slice"></i> Ver Menú
+          </a>
+          <a
+            href="https://wa.me/56900000000"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fab fa-whatsapp"></i> Pedir Ahora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HORARIOS & INFO ===== -->
+    <section id="info">
+      <div class="section-container">
+        <div class="section-divider"></div>
+        <h2 class="section-title">Información</h2>
+        <p class="section-subtitle">
+          Todo lo que necesitas saber para disfrutar de la mejor pizza.
+        </p>
+        <div class="info-grid">
+          <div class="info-card fade-in">
+            <i class="fas fa-clock"></i>
+            <h3>Horario de Atención</h3>
+            <div id="hoursList">
+              <div class="hours-row">
+                <span class="day">Lunes</span
+                ><span class="time">11:30 a.m. – 11:30 p.m.</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Martes</span
+                ><span class="time">11:30 a.m. – 11:30 p.m.</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Miércoles</span
+                ><span class="time">11:30 a.m. – 11:30 p.m.</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Jueves</span
+                ><span class="time">11:30 a.m. – 11:30 p.m.</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Viernes</span
+                ><span class="time">11:30 a.m. – 11:30 p.m.</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Sábado</span
+                ><span class="time">11:30 a.m. – 11:30 p.m.</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Domingo</span
+                ><span class="time">12:00 p.m. – 9:30 p.m.</span>
+              </div>
+            </div>
+            <div class="hours-today" id="hoursToday"></div>
+          </div>
+          <div class="info-card fade-in">
+            <i class="fas fa-location-dot"></i>
+            <h3>Ubicación</h3>
+            <p>
+              Calle Ejemplo #456<br />
+              Ciudad de Muestra, Chile<br />
+              <strong>Chile</strong>
+            </p>
+            <a
+              href="https://maps.google.com/?q=-33.456,-70.648"
+              target="_blank"
+              class="btn btn-primary"
+              style="
+                margin-top: 12px;
+                display: inline-flex;
+                padding: 8px 20px;
+                font-size: 0.85rem;
+              "
+            >
+              <i class="fas fa-map-pin"></i> Ver en Google Maps
+            </a>
+          </div>
+          <div class="info-card fade-in">
+            <i class="fas fa-phone"></i>
+            <h3>Contacto</h3>
+            <p>
+              <strong>Teléfono / WhatsApp:</strong><br />
+              +56 9 0000 0000
+            </p>
+            <p style="margin-top: 8px">
+              <strong>Instagram:</strong><br />
+              @pizzeria_ejemplo
+            </p>
+            <a
+              href="https://wa.me/56900000000"
+              target="_blank"
+              class="btn btn-primary"
+              style="
+                margin-top: 12px;
+                display: inline-flex;
+                padding: 8px 20px;
+                font-size: 0.85rem;
+              "
+            >
+              <i class="fab fa-whatsapp"></i> Escríbenos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MENÚ DIGITAL ===== -->
+    <section id="menu">
+      <div class="section-container">
+        <div class="section-divider"></div>
+        <h2 class="section-title">Nuestro Menú</h2>
+        <p class="section-subtitle">
+          Pizzas artesanales elaboradas con ingredientes frescos y mucho amor.
+        </p>
+        <div class="menu-tabs" id="menuTabs">
+          <button class="menu-tab active" data-category="all">Todas</button>
+          <button class="menu-tab" data-category="pizzas">Pizzas</button>
+          <button class="menu-tab" data-category="especiales">
+            Especiales
+          </button>
+          <button class="menu-tab" data-category="bebidas">Bebidas</button>
+        </div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== UBICACIÓN (Google Maps) ===== -->
+    <section id="ubicacion">
+      <div class="section-container">
+        <div class="section-divider"></div>
+        <h2 class="section-title">Encuéntranos</h2>
+        <p class="section-subtitle">Visítanos. ¡Te esperamos!</p>
+        <div class="map-container fade-in">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2439.123!2d-72.955884!3d-40.3310297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96164388561240bf%3A0xdf5350f0ede33933!2sDa%20Mangiare%20Pizza%20Rio%20Bueno!5e0!3m2!1ses!2scl!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto">
+      <div class="section-container">
+        <div class="section-divider"></div>
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">
+          Haz tu pedido o contáctanos por cualquiera de estos medios.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-item fade-in">
+            <i class="fab fa-whatsapp"></i>
+            <h4>WhatsApp</h4>
+            <p>+56 9 0000 0000</p>
+            <a
+              href="https://wa.me/56900000000"
+              target="_blank"
+              class="btn btn-primary"
+              style="padding: 10px 24px; font-size: 0.85rem"
+            >
+              <i class="fab fa-whatsapp"></i> Enviar Mensaje
+            </a>
+          </div>
+          <div class="contact-item fade-in">
+            <i class="fab fa-instagram"></i>
+            <h4>Instagram</h4>
+            <p>@pizzeria_ejemplo</p>
+            <a
+              href="https://www.instagram.com/pizzeria_ejemplo"
+              target="_blank"
+              class="btn btn-primary"
+              style="padding: 10px 24px; font-size: 0.85rem"
+            >
+              <i class="fab fa-instagram"></i> Seguir
+            </a>
+          </div>
+          <div class="contact-item fade-in">
+            <i class="fas fa-map-pin"></i>
+            <h4>Dirección</h4>
+            <p>Calle Ejemplo #456, Ciudad de Muestra</p>
+            <a
+              href="https://maps.google.com/?q=-33.456,-70.648"
+              target="_blank"
+              class="btn btn-secondary"
+              style="padding: 10px 24px; font-size: 0.85rem"
+            >
+              <i class="fas fa-map"></i> Cómo Llegar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CART OVERLAY & SIDEBAR ===== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2><i class="fas fa-shopping-bag"></i> Tu Pedido</h2>
+        <button class="close-btn" id="cartClose" aria-label="Cerrar carrito">
+          &times;
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+          <i class="fas fa-pizza-slice"></i>
+          <p>Tu carrito está vacío</p>
+          <p style="font-size: 0.85rem; color: #aaa">
+            Agrega productos del menú
+          </p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span class="total-price" id="cartTotal">$0</span>
+        </div>
+        <button class="whatsapp-btn" id="whatsappOrder" disabled>
+          <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+        </button>
+        <p class="note">Al enviar serás redirigido a WhatsApp.</p>
+      </div>
+    </div>
+
+    <!-- ===== FLOATING BUTTONS ===== -->
+    <button class="cart-float" id="cartFloat" aria-label="Carrito">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-count-float" id="cartCountFloat">0</span>
+    </button>
+
+    <a
+      href="https://wa.me/56900000000"
+      target="_blank"
+      class="whatsapp-float"
+      aria-label="WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast">
+      <i class="fas fa-check-circle" style="color: #25d366"></i>
+      <span id="toastMsg">Producto agregado</span>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/pizzeria_ejemplo"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://wa.me/56900000000"
+          target="_blank"
+          aria-label="WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://maps.google.com/?q=-33.456,-70.648"
+          target="_blank"
+          aria-label="Ubicación"
+        >
+          <i class="fas fa-map-marker-alt"></i>
+        </a>
+      </div>
+      <p>&copy; 2026 Pizzería Artesanal. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
