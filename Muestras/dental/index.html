@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Clínica Dental Care - Odontología general, estética dental, ortodoncia e implantes. Agenda tu consulta con los mejores especialistas."
+    />
+    <meta
+      name="keywords"
+      content="clínica dental, dentista, odontología, ortodoncia, implantes dentales, estética dental, Chile"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://kraltech.net/Muestras/dental/index.html"
+    />
+    <meta
+      property="og:title"
+      content="Clínica Dental Care | Odontología de Confianza"
+    />
+    <meta
+      property="og:description"
+      content="Tu sonrisa es nuestra prioridad. Odontología general, estética dental, ortodoncia e implantes. Agenda tu consulta hoy."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <title>Clínica Dental Care | Odontología de Confianza</title>
+    <style>
+      /* ===== RESET & BASE ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 75px;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #fafbfc;
+        color: #2d3436;
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* ===== COLORS ===== */
+      :root {
+        --primary: #00b4d8;
+        --primary-dark: #0096c7;
+        --accent: #48bfe3;
+        --light-blue: #e0f7fa;
+        --text-dark: #2d3436;
+        --text-muted: #636e72;
+        --bg-light: #f8f9fa;
+        --white: #ffffff;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        --radius: 14px;
+      }
+
+      /* ===== NAVBAR ===== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: var(--white);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        padding: 0 1.5rem;
+      }
+      .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--text-dark);
+      }
+      .navbar .logo .logo-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.1rem;
+      }
+      .navbar .logo span {
+        color: var(--primary);
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0.3rem;
+      }
+      .nav-links a {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        transition: all 0.2s;
+      }
+      .nav-links a:hover {
+        background: var(--light-blue);
+        color: var(--primary-dark);
+      }
+      .nav-links .cta {
+        background: var(--primary);
+        color: #fff;
+      }
+      .nav-links .cta:hover {
+        background: var(--primary-dark);
+      }
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+      .nav-toggle span {
+        width: 26px;
+        height: 2.5px;
+        background: var(--text-dark);
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        margin-top: 72px;
+        background: linear-gradient(
+          135deg,
+          #e0f7fa 0%,
+          #b2ebf2 50%,
+          #80deea 100%
+        );
+        padding: 5rem 1.5rem 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: rgba(0, 180, 216, 0.08);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 400px;
+        height: 400px;
+        background: rgba(72, 191, 227, 0.08);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .hero .container {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .hero-content h1 {
+        font-size: clamp(2rem, 4.5vw, 3rem);
+        font-weight: 800;
+        color: var(--text-dark);
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+      }
+      .hero-content h1 .highlight {
+        color: var(--primary);
+      }
+      .hero-content p {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        margin: 1rem 0 2rem;
+        max-width: 480px;
+      }
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+      }
+      .hero-badges span {
+        background: rgba(0, 180, 216, 0.12);
+        color: var(--primary-dark);
+        padding: 0.3rem 1rem;
+        border-radius: 50px;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.85rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.25s;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 180, 216, 0.35);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--primary-dark);
+        border: 2px solid var(--primary);
+      }
+      .btn-outline:hover {
+        background: var(--primary);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      .btn-white {
+        background: #fff;
+        color: var(--primary-dark);
+      }
+      .btn-white:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hero-visual img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ===== SECCIONES ===== */
+      .section {
+        padding: 5rem 0;
+      }
+      .section-alt {
+        background: var(--white);
+      }
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        text-align: center;
+        margin-bottom: 0.6rem;
+      }
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1rem;
+        margin-bottom: 3.5rem;
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .eyebrow {
+        display: block;
+        text-align: center;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+      }
+
+      /* ===== ABOUT ===== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .about-grid img {
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+      .about-text h3 {
+        font-size: 1.4rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+      }
+      .about-text p {
+        color: var(--text-muted);
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+      }
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .about-stats .stat {
+        text-align: center;
+        background: var(--light-blue);
+        padding: 1.2rem 0.5rem;
+        border-radius: 12px;
+      }
+      .about-stats .stat strong {
+        display: block;
+        font-size: 1.6rem;
+        color: var(--primary);
+        font-weight: 800;
+      }
+      .about-stats .stat span {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+
+      /* ===== SERVICES ===== */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .service-card {
+        background: var(--bg-light);
+        border-radius: var(--radius);
+        padding: 2rem 1.5rem;
+        transition: all 0.3s;
+        border: 1px solid #eef2f6;
+        position: relative;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+        border-color: var(--primary);
+      }
+      .service-card .service-icon {
+        font-size: 2.4rem;
+        margin-bottom: 0.8rem;
+      }
+      .service-card h3 {
+        font-size: 1.15rem;
+        color: var(--text-dark);
+        margin-bottom: 0.3rem;
+      }
+      .service-card .service-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .service-card .service-price {
+        display: inline-block;
+        background: var(--light-blue);
+        color: var(--primary-dark);
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 0.3rem 1rem;
+        border-radius: 50px;
+      }
+      .service-card .service-price.from {
+        background: transparent;
+        border: 1.5px dashed var(--primary);
+        color: var(--primary-dark);
+      }
+
+      /* ===== SCHEDULING ===== */
+      .scheduling-section {
+        background: linear-gradient(135deg, #e0f7fa 0%, #f0faff 100%);
+      }
+      .scheduling-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .scheduling-info h3 {
+        font-size: 1.4rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+      }
+      .scheduling-info p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+      .scheduling-info .benefits {
+        list-style: none;
+        margin-bottom: 1.5rem;
+      }
+      .scheduling-info .benefits li {
+        padding: 0.4rem 0;
+        font-size: 0.92rem;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .scheduling-info .benefits li::before {
+        content: "✓";
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      /* ---- Appointment Picker ---- */
+      .appointment-card {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 2rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+        border: 1px solid #eef2f6;
+      }
+      .appointment-card h4 {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .appointment-card h4 span {
+        font-size: 1.3rem;
+      }
+      .picker-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .picker-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .picker-group label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .picker-group select,
+      .picker-group input {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        outline: none;
+        background: var(--bg-light);
+        transition: border-color 0.2s;
+      }
+      .picker-group select:focus,
+      .picker-group input:focus {
+        border-color: var(--primary);
+      }
+
+      .time-slots {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+      .time-slots button {
+        padding: 0.6rem 0.3rem;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 8px;
+        background: var(--white);
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .time-slots button:hover {
+        border-color: var(--primary);
+        color: var(--primary-dark);
+        background: var(--light-blue);
+      }
+      .time-slots button.selected {
+        border-color: var(--primary);
+        background: var(--primary);
+        color: #fff;
+      }
+      .time-slots button.unavailable {
+        opacity: 0.4;
+        cursor: not-allowed;
+        text-decoration: line-through;
+      }
+      .btn-schedule {
+        width: 100%;
+        padding: 0.9rem;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.25s;
+        margin-top: 1rem;
+      }
+      .btn-schedule:hover {
+        background: var(--primary-dark);
+      }
+      .btn-schedule:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* ===== TESTIMONIALS ===== */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .testimonial-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 2rem 1.5rem;
+        border: 1px solid #eef2f6;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-3px);
+      }
+      .testimonial-card .stars {
+        color: #f1c40f;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+      }
+      .testimonial-card blockquote {
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        font-style: italic;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+      }
+      .testimonial-card blockquote::before {
+        content: "\201C";
+        font-size: 2rem;
+        color: var(--primary);
+        line-height: 0;
+        vertical-align: -8px;
+        margin-right: 4px;
+      }
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .testimonial-author .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--light-blue);
+      }
+      .testimonial-author .avatar-placeholder {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--light-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .testimonial-author .info strong {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--text-dark);
+      }
+      .testimonial-author .info span {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+
+      /* ===== LOCATION / MAP ===== */
+      .map-wrapper {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        border: 1px solid #eef2f6;
+      }
+      .map-wrapper iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        display: block;
+      }
+      .location-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .location-info-grid .info-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem 1.2rem;
+        background: var(--bg-light);
+        border-radius: 12px;
+        border: 1px solid #eef2f6;
+      }
+      .location-info-grid .info-item .emoji {
+        font-size: 1.4rem;
+        flex-shrink: 0;
+      }
+      .location-info-grid .info-item .text strong {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--text-dark);
+        margin-bottom: 0.1rem;
+      }
+      .location-info-grid .info-item .text span {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* ===== CTA BANNER ===== */
+      .cta-banner {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        color: #fff;
+        text-align: center;
+        padding: 4rem 1.5rem;
+      }
+      .cta-banner h2 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+      }
+      .cta-banner p {
+        font-size: 1.05rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+      }
+      .cta-banner .btn-white:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background: #1a2930;
+        color: #b0bec5;
+        padding: 3rem 1.5rem 1.5rem;
+      }
+      .footer-grid {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .footer-brand h4 {
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .footer-brand h4 .logo-icon {
+        width: 30px;
+        height: 30px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+      .footer-brand p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        max-width: 320px;
+      }
+      .footer-col h5 {
+        color: #fff;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+      .footer-col a {
+        display: block;
+        color: #90a4ae;
+        font-size: 0.88rem;
+        padding: 0.3rem 0;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--primary);
+      }
+      .footer-bottom {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: center;
+        font-size: 0.83rem;
+        color: #78909c;
+      }
+
+      /* ===== WHATSAPP FLOAT ===== */
+      .wa-float {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 200;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        transition: transform 0.25s;
+      }
+      .wa-float:hover {
+        transform: scale(1.08);
+      }
+      .wa-float svg {
+        width: 28px;
+        height: 28px;
+        fill: #fff;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 900px) {
+        .hero .container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-content p {
+          margin: 1rem auto 2rem;
+        }
+        .hero-badges {
+          justify-content: center;
+        }
+        .hero-actions {
+          justify-content: center;
+        }
+        .hero-visual {
+          display: none;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .about-grid img {
+          height: 280px;
+        }
+        .scheduling-grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          background: var(--white);
+          padding: 1rem 1.5rem;
+          border-bottom: 1px solid #eee;
+          transform: translateY(-120%);
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.3s;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .nav-links.open {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .nav-toggle {
+          display: flex;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .hero {
+          padding: 4rem 1rem 3rem;
+        }
+        .section {
+          padding: 3rem 0;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+        .about-stats {
+          grid-template-columns: 1fr;
+        }
+        .time-slots {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .picker-row {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .location-info-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">
+          <span class="logo-icon">🦷</span>
+          Dental <span>Care</span>
+        </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#contacto" class="cta">Agendar cita</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badges">
+            <span>🦷 Odontología general</span>
+            <span>✨ Estética dental</span>
+            <span>🦷 Ortodoncia</span>
+          </div>
+          <h1>
+            Tu sonrisa es nuestra <span class="highlight">prioridad</span>
+          </h1>
+          <p>
+            En Clínica Dental Care combinamos tecnología de vanguardia con un
+            equipo de especialistas para brindarte la mejor experiencia dental.
+            Higiene, confianza y resultados que hablan por sí solos.
+          </p>
+          <div class="hero-actions">
+            <a href="#agenda" class="btn btn-primary">Agenda tu consulta</a>
+            <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80"
+            alt="Clínica dental moderna y profesional"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="section" id="nosotros">
+      <div class="container">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2 class="section-title">Cuidamos tu sonrisa con excelencia</h2>
+        <p class="section-subtitle">
+          Más de 10 años brindando atención odontológica de calidad con un
+          enfoque humano y profesional.
+        </p>
+        <div class="about-grid">
+          <img
+            src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=700&q=80"
+            alt="Equipo de dentistas en clínica moderna"
+            loading="lazy"
+          />
+          <div class="about-text">
+            <h3>Odontología de vanguardia con calidez humana</h3>
+            <p>
+              En <strong>Clínica Dental Care</strong> contamos con un equipo de
+              odontólogos especializados en diversas áreas: ortodoncia,
+              implantología, endodoncia, estética dental y odontopediatría.
+            </p>
+            <p>
+              Nuestra clínica está equipada con tecnología de última generación
+              para garantizar diagnósticos precisos y tratamientos indoloros.
+              Utilizamos equipos digitales, radiografía 3D y sistemas de
+              esterilización de alto nivel.
+            </p>
+            <p>
+              Creemos en la prevención como base de una buena salud bucal, por
+              eso cada consulta incluye un plan personalizado de cuidado dental.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <strong>10+</strong>
+                <span>Años de experiencia</span>
+              </div>
+              <div class="stat">
+                <strong>5.000+</strong>
+                <span>Pacientes atendidos</span>
+              </div>
+              <div class="stat">
+                <strong>98%</strong>
+                <span>Satisfacción</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="section section-alt" id="servicios">
+      <div class="container">
+        <span class="eyebrow">Servicios</span>
+        <h2 class="section-title">Tratamientos para toda la familia</h2>
+        <p class="section-subtitle">
+          Ofrecemos una amplia gama de servicios odontológicos con precios
+          transparentes y la mejor calidad.
+        </p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Odontología General</h3>
+            <p class="service-desc">
+              Limpiezas profundas, evaluaciones bucales completas, sellantes y
+              fluorización. La base de una sonrisa saludable.
+            </p>
+            <span class="service-price">Desde $25.000</span>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Estética Dental</h3>
+            <p class="service-desc">
+              Carillas de porcelana, blanqueamiento dental con láser,
+              contorneado estético y diseño de sonrisa digital.
+            </p>
+            <span class="service-price">Desde $80.000</span>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Ortodoncia</h3>
+            <p class="service-desc">
+              Brackets metálicos, estéticos y alineadores invisibles Invisalign.
+              Corregimos la posición de tus dientes.
+            </p>
+            <span class="service-price from">Desde $350.000</span>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔩</div>
+            <h3>Implantes Dentales</h3>
+            <p class="service-desc">
+              Reemplazo de piezas perdidas con implantes de titanio de alta
+              calidad. Resultados naturales y duraderos.
+            </p>
+            <span class="service-price from">Desde $450.000</span>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Endodoncia</h3>
+            <p class="service-desc">
+              Tratamiento de conductos con microscopio operatorio para máxima
+              precisión y conservación de la pieza dental.
+            </p>
+            <span class="service-price">Desde $120.000</span>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">👶</div>
+            <h3>Odontopediatría</h3>
+            <p class="service-desc">
+              Atención dental especializada para niños en un ambiente amigable y
+              libre de estrés. Educamos en salud bucal.
+            </p>
+            <span class="service-price">Desde $20.000</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AGENDAMIENTO ===== -->
+    <section class="section scheduling-section" id="agenda">
+      <div class="container">
+        <span class="eyebrow">Agenda tu cita</span>
+        <h2 class="section-title">Reserva tu consulta en segundos</h2>
+        <p class="section-subtitle">
+          Elige el día y horario que mejor te acomode. Te confirmaremos tu cita
+          por WhatsApp.
+        </p>
+        <div class="scheduling-grid">
+          <div class="scheduling-info">
+            <h3>¿Por qué agendar con nosotros?</h3>
+            <ul class="benefits">
+              <li>Atención personalizada desde tu primera consulta</li>
+              <li>Horarios flexibles incluyendo sábados</li>
+              <li>Urgencias dentales con atención prioritaria</li>
+              <li>Financiamiento en todos nuestros tratamientos</li>
+              <li>Estacionamiento gratuito para pacientes</li>
+            </ul>
+            <p>
+              ¿Prefieres hablar directamente? Escríbenos por WhatsApp y te
+              agendamos al instante.
+            </p>
+            <a
+              href="https://wa.me/56972251219?text=Hola%2C%20quiero%20agendar%20una%20consulta%20en%20Cl%C3%ADnica%20Dental%20Care."
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Agendar por WhatsApp
+            </a>
+          </div>
+          <div class="appointment-card">
+            <h4><span>📅</span> Selecciona tu horario</h4>
+            <div class="picker-row">
+              <div class="picker-group">
+                <label>Especialidad</label>
+                <select id="specialty">
+                  <option value="general">Odontología General</option>
+                  <option value="estetica">Estética Dental</option>
+                  <option value="ortodoncia">Ortodoncia</option>
+                  <option value="implantes">Implantes</option>
+                  <option value="endodoncia">Endodoncia</option>
+                  <option value="pediatria">Odontopediatría</option>
+                </select>
+              </div>
+              <div class="picker-group">
+                <label>Fecha</label>
+                <input type="date" id="apptDate" />
+              </div>
+            </div>
+            <div class="picker-group" style="margin-bottom: 0.5rem">
+              <label>Horario disponible</label>
+            </div>
+            <div class="time-slots" id="timeSlots">
+              <button data-time="09:00">09:00</button>
+              <button data-time="09:30">09:30</button>
+              <button data-time="10:00">10:00</button>
+              <button data-time="10:30">10:30</button>
+              <button data-time="11:00">11:00</button>
+              <button data-time="11:30">11:30</button>
+              <button data-time="12:00">12:00</button>
+              <button data-time="12:30" class="unavailable" disabled>
+                12:30
+              </button>
+              <button data-time="14:00">14:00</button>
+              <button data-time="14:30">14:30</button>
+              <button data-time="15:00">15:00</button>
+              <button data-time="15:30">15:30</button>
+              <button data-time="16:00">16:00</button>
+              <button data-time="16:30">16:30</button>
+              <button data-time="17:00">17:00</button>
+              <button data-time="17:30">17:30</button>
+              <button data-time="18:00">18:00</button>
+              <button data-time="18:30" class="unavailable" disabled>
+                18:30
+              </button>
+            </div>
+            <button class="btn-schedule" id="btnSchedule" disabled>
+              Confirmar cita
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section class="section" id="testimonios">
+      <div class="container">
+        <span class="eyebrow">Testimonios</span>
+        <h2 class="section-title">Lo que dicen nuestros pacientes</h2>
+        <p class="section-subtitle">
+          La satisfacción de nuestros pacientes es nuestro mejor respaldo.
+        </p>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              Desde la primera llamada sentí la confianza. Me explicaron todo el
+              tratamiento de ortodoncia con claridad y los resultados superaron
+              mis expectativas. 100% recomendados.
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="avatar-placeholder">CM</div>
+              <div class="info">
+                <strong>Carolina Muñoz</strong>
+                <span>Paciente de ortodoncia</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              Llevé a mi hijo de 5 años por primera vez al dentista y fue una
+              experiencia increíble. La doctora fue muy paciente y cariñosa.
+              Ahora mi hijo pide volver.
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="avatar-placeholder">PR</div>
+              <div class="info">
+                <strong>Pamela Rojas</strong>
+                <span>Madre de paciente</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              Me hice un blanqueamiento dental y el cambio fue notable. El
+              procedimiento fue rápido, sin dolor y el equipo muy profesional.
+              Mi sonrisa luce espectacular.
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="avatar-placeholder">FG</div>
+              <div class="info">
+                <strong>Francisco González</strong>
+                <span>Paciente de estética dental</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== UBICACIÓN ===== -->
+    <section class="section section-alt" id="ubicacion">
+      <div class="container">
+        <span class="eyebrow">Ubicación</span>
+        <h2 class="section-title">Visítanos en nuestra clínica</h2>
+        <p class="section-subtitle">
+          Estamos ubicados en el corazón de Las Condes, con fácil acceso y
+          estacionamiento.
+        </p>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.648044363148!2d-70.590123684796!3d-33.416447980777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2a0a0b0b0b%3A0x0!2zMzPCsDI0JzU5LjIiUyA3MMKwMzUnMTYuNyJX!5e0!3m2!1ses!2scl!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Clínica Dental Care"
+          ></iframe>
+        </div>
+        <div class="location-info-grid">
+          <div class="info-item">
+            <div class="emoji">📍</div>
+            <div class="text">
+              <strong>Dirección</strong>
+              <span>Av. Apoquindo 4500, Piso 3, Las Condes, Santiago</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="emoji">📞</div>
+            <div class="text">
+              <strong>Teléfono</strong>
+              <span>+56 2 2123 4567</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="emoji">📱</div>
+            <div class="text">
+              <strong>WhatsApp</strong>
+              <span>+56 9 7225 1219</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="emoji">🕐</div>
+            <div class="text">
+              <strong>Horarios</strong>
+              <span>Lun-Vie: 9:00-19:00 | Sáb: 9:00-14:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-banner" id="contacto">
+      <h2>¿Listo para transformar tu sonrisa?</h2>
+      <p>
+        Agenda tu primera consulta y recibe un diagnóstico completo sin costo.
+      </p>
+      <a href="#agenda" class="btn btn-white">Agendar consulta gratis</a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>
+            <span class="logo-icon">🦷</span>
+            Dental Care
+          </h4>
+          <p>
+            Clínica dental de confianza con más de 10 años de experiencia.
+            Cuidamos tu sonrisa con excelencia y calidez humana.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#agenda">Agenda</a>
+          <a href="#testimonios">Testimonios</a>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <a href="#servicios">Odontología General</a>
+          <a href="#servicios">Estética Dental</a>
+          <a href="#servicios">Ortodoncia</a>
+          <a href="#servicios">Implantes</a>
+          <a href="#servicios">Odontopediatría</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <a href="mailto:contacto@dentalcare.cl">contacto@dentalcare.cl</a>
+          <a href="tel:+56221234567">+56 2 2123 4567</a>
+          <a
+            href="https://wa.me/56972251219?text=Hola%2C%20vi%20la%20muestra%20de%20Cl%C3%ADnica%20Dental%20y%20me%20interesa%20una%20p%C3%A1gina%20similar."
+            target="_blank"
+            rel="noopener"
+            >WhatsApp: +56 9 7225 1219</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Clínica Dental Care. Todos los derechos reservados. Página
+          de muestra por Kral Tech Solutions.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <button
+      class="wa-float"
+      aria-label="Contactar por WhatsApp"
+      onclick="
+        window.open(
+          'https://wa.me/56972251219?text=Hola%2C%20vi%20la%20muestra%20de%20Cl%C3%ADnica%20Dental%20y%20me%20interesa%20una%20p%C3%A1gina%20similar.',
+          '_blank',
+        )
+      "
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width="28"
+        height="28"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.5c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.4.9.9-3.3-.2-.4c-1-1.6-1.5-3.4-1.5-5.4C6 9.9 10.5 5.4 16 5.4S25.9 9.9 25.9 15 21.5 24.8 16 24.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"
+        />
+      </svg>
+    </button>
+
+    <script>
+      // ===== Mobile Nav Toggle =====
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        navToggle.classList.toggle("active");
+        navToggle.setAttribute("aria-expanded", open);
+      });
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          navToggle.classList.remove("active");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // ===== Date Picker: set min to today =====
+      const dateInput = document.getElementById("apptDate");
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.setAttribute("min", today);
+      dateInput.value = today;
+
+      // ===== Time Slot Selection =====
+      const timeButtons = document.querySelectorAll(
+        ".time-slots button:not(.unavailable)",
+      );
+      const btnSchedule = document.getElementById("btnSchedule");
+      let selectedTime = null;
+
+      timeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          timeButtons.forEach((b) => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          selectedTime = btn.dataset.time;
+          btnSchedule.disabled = false;
+        });
+      });
+
+      // ===== Confirm Appointment =====
+      btnSchedule.addEventListener("click", () => {
+        const specialty = document.getElementById("specialty").value;
+        const date = document.getElementById("apptDate").value;
+        const specialtyNames = {
+          general: "Odontología General",
+          estetica: "Estética Dental",
+          ortodoncia: "Ortodoncia",
+          implantes: "Implantes",
+          endodoncia: "Endodoncia",
+          pediatria: "Odontopediatría",
+        };
+        const msg = `Hola%2C%20quiero%20agendar%20una%20cita%20en%20Cl%C3%ADnica%20Dental%20Care.%0A%0A%F0%9F%93%85%20Fecha%3A%20${date}%0A%F0%9F%95%90%20Horario%3A%20${selectedTime}%0A%F0%9F%A6%B7%20Especialidad%3A%20${specialtyNames[specialty]}`;
+        window.open(`https://wa.me/56972251219?text=${msg}`, "_blank");
+        btnSchedule.textContent = "✅ Cita solicitada";
+        btnSchedule.disabled = true;
+        setTimeout(() => {
+          btnSchedule.textContent = "Confirmar cita";
+          btnSchedule.disabled = false;
+          timeButtons.forEach((b) => b.classList.remove("selected"));
+          selectedTime = null;
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
