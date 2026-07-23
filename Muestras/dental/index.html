@@ -1088,55 +1088,43 @@
               Agendar por WhatsApp
             </a>
           </div>
-          <div class="appointment-card">
-            <h4><span>📅</span> Selecciona tu horario</h4>
-            <div class="picker-row">
-              <div class="picker-group">
-                <label>Especialidad</label>
-                <select id="specialty">
-                  <option value="general">Odontología General</option>
-                  <option value="estetica">Estética Dental</option>
-                  <option value="ortodoncia">Ortodoncia</option>
-                  <option value="implantes">Implantes</option>
-                  <option value="endodoncia">Endodoncia</option>
-                  <option value="pediatria">Odontopediatría</option>
-                </select>
-              </div>
-              <div class="picker-group">
-                <label>Fecha</label>
-                <input type="date" id="apptDate" />
-              </div>
+          <div class="appointment-card" style="text-align: center">
+            <h4 style="justify-content: center">
+              <span>🖥️</span> Agenda online
+            </h4>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+              "
+            >
+              Nuestro sistema de agendamiento online te permite reservar tu cita
+              de forma rápida y segura. Selecciona el tratamiento que necesitas,
+              el especialista y el horario disponible.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 1rem">
+              <a
+                href="booking/"
+                class="btn btn-primary"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 0.5rem;
+                  width: 100%;
+                  padding: 1rem 2rem;
+                  font-size: 1.05rem;
+                "
+              >
+                <span style="font-size: 1.3rem">📅</span>
+                Agendar hora online
+              </a>
+              <p style="font-size: 0.82rem; color: var(--text-muted)">
+                ⏱ Proceso rápido • 4 simples pasos • Sin registro
+              </p>
             </div>
-            <div class="picker-group" style="margin-bottom: 0.5rem">
-              <label>Horario disponible</label>
-            </div>
-            <div class="time-slots" id="timeSlots">
-              <button data-time="09:00">09:00</button>
-              <button data-time="09:30">09:30</button>
-              <button data-time="10:00">10:00</button>
-              <button data-time="10:30">10:30</button>
-              <button data-time="11:00">11:00</button>
-              <button data-time="11:30">11:30</button>
-              <button data-time="12:00">12:00</button>
-              <button data-time="12:30" class="unavailable" disabled>
-                12:30
-              </button>
-              <button data-time="14:00">14:00</button>
-              <button data-time="14:30">14:30</button>
-              <button data-time="15:00">15:00</button>
-              <button data-time="15:30">15:30</button>
-              <button data-time="16:00">16:00</button>
-              <button data-time="16:30">16:30</button>
-              <button data-time="17:00">17:00</button>
-              <button data-time="17:30">17:30</button>
-              <button data-time="18:00">18:00</button>
-              <button data-time="18:30" class="unavailable" disabled>
-                18:30
-              </button>
-            </div>
-            <button class="btn-schedule" id="btnSchedule" disabled>
-              Confirmar cita
-            </button>
           </div>
         </div>
       </div>
@@ -1370,30 +1358,6 @@
           selectedTime = btn.dataset.time;
           btnSchedule.disabled = false;
         });
-      });
-
-      // ===== Confirm Appointment =====
-      btnSchedule.addEventListener("click", () => {
-        const specialty = document.getElementById("specialty").value;
-        const date = document.getElementById("apptDate").value;
-        const specialtyNames = {
-          general: "Odontología General",
-          estetica: "Estética Dental",
-          ortodoncia: "Ortodoncia",
-          implantes: "Implantes",
-          endodoncia: "Endodoncia",
-          pediatria: "Odontopediatría",
-        };
-        const msg = `Hola%2C%20quiero%20agendar%20una%20cita%20en%20Cl%C3%ADnica%20Dental%20Care.%0A%0A%F0%9F%93%85%20Fecha%3A%20${date}%0A%F0%9F%95%90%20Horario%3A%20${selectedTime}%0A%F0%9F%A6%B7%20Especialidad%3A%20${specialtyNames[specialty]}`;
-        window.open(`https://wa.me/56972251219?text=${msg}`, "_blank");
-        btnSchedule.textContent = "✅ Cita solicitada";
-        btnSchedule.disabled = true;
-        setTimeout(() => {
-          btnSchedule.textContent = "Confirmar cita";
-          btnSchedule.disabled = false;
-          timeButtons.forEach((b) => b.classList.remove("selected"));
-          selectedTime = null;
-        }, 3000);
       });
     </script>
   </body>
