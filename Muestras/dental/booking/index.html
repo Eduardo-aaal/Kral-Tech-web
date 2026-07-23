@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamiento - Clínica Dental Care</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #e0f7fa 0%, #f0faff 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .card {
+        background: white;
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      }
+      .icon {
+        width: 80px;
+        height: 80px;
+        background: #e0f7fa;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        color: #2d3436;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: #636e72;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      .steps {
+        text-align: left;
+        background: #f8f9fa;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .steps ol {
+        padding-left: 1.2rem;
+      }
+      .steps li {
+        color: #2d3436;
+        font-size: 0.9rem;
+        padding: 0.4rem 0;
+        line-height: 1.5;
+      }
+      .steps li strong {
+        color: #00b4d8;
+      }
+      .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #00b4d8;
+        color: white;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.25s;
+      }
+      .btn:hover {
+        background: #0096c7;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 180, 216, 0.35);
+      }
+      .code {
+        background: #1a2930;
+        color: #b0bec5;
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+        font-family: monospace;
+        font-size: 0.85rem;
+        margin: 1rem 0;
+        word-break: break-all;
+      }
+      .status {
+        display: inline-block;
+        padding: 0.3rem 1rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .status-off {
+        background: #ffeaa7;
+        color: #d68910;
+      }
+      .status-on {
+        background: #d5f5e3;
+        color: #1e8449;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="icon">🦷</div>
+      <span class="status status-off">⏸ Servidor no iniciado</span>
+      <h1>Sistema de Agendamiento</h1>
+      <p>
+        Esta aplicación necesita que el servidor de Next.js esté ejecutándose.
+        Sigue estos pasos para iniciarlo:
+      </p>
+      <div class="steps">
+        <ol>
+          <li>
+            Abre una <strong>terminal</strong> (CMD, PowerShell o Git Bash)
+          </li>
+          <li>
+            Ve a la carpeta del proyecto:
+            <div class="code">cd Muestras/dental/booking</div>
+          </li>
+          <li>
+            Ejecuta el servidor:
+            <div class="code">npm run dev</div>
+          </li>
+          <li>
+            Espera a que aparezca
+            <strong>"ready - started server on 0.0.0.0:3000"</strong>
+          </li>
+          <li>Haz clic en el botón de abajo 👇</li>
+        </ol>
+      </div>
+      <a
+        href="http://localhost:3000"
+        target="_blank"
+        rel="noopener"
+        class="btn"
+      >
+        📅 Ir al agendamiento
+      </a>
+      <p style="margin-top: 1rem; font-size: 0.8rem; color: #b0bec5">
+        Una vez iniciado el servidor, el sistema estará disponible en<br />
+        <strong>http://localhost:3000</strong>
+      </p>
+    </div>
+  </body>
+</html>
