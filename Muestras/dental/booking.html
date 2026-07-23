@@ -1,0 +1,1713 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda tu Hora - Clínica Dental Care</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #e0f7fa 0%, #f0faff 100%);
+        color: #2d3436;
+        min-height: 100vh;
+      }
+      .header {
+        background: white;
+        border-bottom: 1px solid #eef2f6;
+        padding: 0 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: #2d3436;
+        text-decoration: none;
+      }
+      .header-logo .logo-icon {
+        width: 34px;
+        height: 34px;
+        background: #00b4d8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+      }
+      .header-logo span {
+        color: #00b4d8;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+
+      /* Steps indicator */
+      .steps-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .step-dot {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition: all 0.3s;
+      }
+      .step-dot.active {
+        background: #00b4d8;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+        transform: scale(1.1);
+      }
+      .step-dot.done {
+        background: #00b4d8;
+        color: white;
+      }
+      .step-dot.pending {
+        background: #e0e0e0;
+        color: #999;
+      }
+      .step-line {
+        width: 40px;
+        height: 3px;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      .step-line.done {
+        background: #00b4d8;
+      }
+      .step-line.pending {
+        background: #e0e0e0;
+      }
+      .step-label {
+        display: none;
+      }
+      @media (min-width: 640px) {
+        .step-label {
+          display: inline;
+          font-size: 0.75rem;
+          font-weight: 600;
+          margin-left: 0.4rem;
+        }
+        .step-label.active {
+          color: #00b4d8;
+        }
+        .step-label.done {
+          color: #00b4d8;
+        }
+        .step-label.pending {
+          color: #999;
+        }
+      }
+
+      /* Title */
+      .page-title {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+      }
+      .page-subtitle {
+        text-align: center;
+        color: #636e72;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Card */
+      .card {
+        background: white;
+        border-radius: 18px;
+        padding: 1.8rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        border: 1px solid #eef2f6;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      /* Grids */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+      @media (max-width: 600px) {
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Option cards */
+      .option-card {
+        background: #f8f9fa;
+        border: 2px solid transparent;
+        border-radius: 14px;
+        padding: 1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: left;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+      }
+      .option-card:hover {
+        border-color: #b2ebf2;
+      }
+      .option-card.selected {
+        border-color: #00b4d8;
+        background: #e0f7fa;
+        box-shadow: 0 4px 12px rgba(0, 180, 216, 0.15);
+      }
+      .option-card h4 {
+        font-size: 0.9rem;
+        color: #2d3436;
+        margin-bottom: 0.2rem;
+      }
+      .option-card p {
+        font-size: 0.78rem;
+        color: #636e72;
+      }
+      .option-card .tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        background: rgba(0, 180, 216, 0.1);
+        color: #0096c7;
+        padding: 0.15rem 0.6rem;
+        border-radius: 50px;
+        font-weight: 600;
+        margin-top: 0.3rem;
+      }
+
+      /* Calendar */
+      .calendar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+      .calendar-header h4 {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .cal-nav {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 0.3rem 0.6rem;
+        border-radius: 8px;
+        color: #636e72;
+      }
+      .cal-nav:hover {
+        background: #f0f0f0;
+      }
+      .cal-nav:disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+      .cal-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        margin-bottom: 1rem;
+      }
+      .cal-header-cell {
+        text-align: center;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #999;
+        padding: 0.3rem 0;
+      }
+      .cal-day {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        background: none;
+        font-family: inherit;
+      }
+      .cal-day:hover:not(:disabled) {
+        background: #e0f7fa;
+      }
+      .cal-day.selected {
+        background: #00b4d8;
+        color: white;
+      }
+      .cal-day.today {
+        background: #e0f7fa;
+        color: #0096c7;
+        font-weight: 700;
+      }
+      .cal-day.today.selected {
+        background: #00b4d8;
+        color: white;
+      }
+      .cal-day:disabled {
+        color: #ddd;
+        cursor: default;
+      }
+
+      /* Time slots */
+      .time-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      @media (min-width: 600px) {
+        .time-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .time-btn {
+        padding: 0.7rem 0.3rem;
+        border-radius: 10px;
+        border: 1.5px solid #e0e0e0;
+        background: white;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+      .time-btn:hover {
+        border-color: #00b4d8;
+        background: #e0f7fa;
+      }
+      .time-btn.selected {
+        border-color: #00b4d8;
+        background: #00b4d8;
+        color: white;
+      }
+
+      /* Form */
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #636e72;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.3rem;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        outline: none;
+        background: #f8f9fa;
+        transition: border-color 0.2s;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #00b4d8;
+        background: white;
+      }
+      .form-group .error-text {
+        color: #e74c3c;
+        font-size: 0.75rem;
+        margin-top: 0.2rem;
+      }
+      .form-group input.error {
+        border-color: #e74c3c;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.75rem 1.8rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        font-family: inherit;
+      }
+      .btn-primary {
+        background: #00b4d8;
+        color: white;
+      }
+      .btn-primary:hover {
+        background: #0096c7;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
+      }
+      .btn-primary:disabled {
+        opacity: 0.4;
+        cursor: default;
+        transform: none;
+        box-shadow: none;
+      }
+      .btn-ghost {
+        background: transparent;
+        color: #636e72;
+      }
+      .btn-ghost:hover {
+        background: #f0f0f0;
+      }
+      .btn-block {
+        width: 100%;
+        justify-content: center;
+      }
+      .btn-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+      }
+
+      /* Success */
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background: #d5f5e3;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2.5rem;
+      }
+      .summary-box {
+        background: linear-gradient(135deg, #e0f7fa 0%, #f0faff 100%);
+        border-radius: 16px;
+        padding: 1.2rem;
+        margin: 1rem 0;
+        text-align: left;
+      }
+      .summary-box .row {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.4rem 0;
+      }
+      .summary-box .row span:first-child {
+        font-size: 1.2rem;
+      }
+      .summary-box .row .label {
+        font-size: 0.75rem;
+        color: #636e72;
+      }
+      .summary-box .row .value {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #2d3436;
+      }
+
+      /* Loading */
+      .spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #e0e0e0;
+        border-top-color: #00b4d8;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Modal */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        padding: 1rem;
+      }
+      .modal {
+        background: white;
+        border-radius: 18px;
+        padding: 2rem;
+        max-width: 420px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Admin */
+      .admin-section {
+        display: none;
+      }
+      .admin-section.visible {
+        display: block;
+      }
+      .admin-login-card {
+        max-width: 380px;
+        margin: 2rem auto;
+      }
+      .admin-header {
+        background: white;
+        border-bottom: 1px solid #eef2f6;
+        padding: 0 1.5rem;
+      }
+      .admin-header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .admin-btn-link {
+        background: none;
+        border: none;
+        color: #636e72;
+        font-size: 0.8rem;
+        cursor: pointer;
+        font-family: inherit;
+        text-decoration: underline;
+      }
+      .admin-btn-link:hover {
+        color: #e74c3c;
+      }
+      .filter-pills {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .filter-pill {
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        border: 1.5px solid #e0e0e0;
+        background: white;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+      .filter-pill.active {
+        background: #00b4d8;
+        color: white;
+        border-color: #00b4d8;
+      }
+      .appt-card {
+        background: white;
+        border-radius: 14px;
+        padding: 1rem;
+        border: 1px solid #eef2f6;
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .appt-time {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #00b4d8;
+        min-width: 50px;
+        text-align: center;
+      }
+      .appt-info {
+        flex: 1;
+      }
+      .appt-info h4 {
+        font-size: 0.9rem;
+        color: #2d3436;
+      }
+      .appt-info .meta {
+        font-size: 0.78rem;
+        color: #636e72;
+        margin-top: 0.2rem;
+      }
+      .appt-info .meta a {
+        color: #00b4d8;
+        text-decoration: none;
+      }
+      .appt-actions {
+        display: flex;
+        gap: 0.3rem;
+      }
+      .appt-btn {
+        padding: 0.4rem;
+        border-radius: 8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.2s;
+      }
+      .appt-btn:hover {
+        background: #f0f0f0;
+      }
+      .appt-btn.danger:hover {
+        background: #fde8e8;
+      }
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+        margin-bottom: 1.2rem;
+      }
+      .stat-box {
+        background: white;
+        border-radius: 12px;
+        padding: 0.8rem;
+        border: 1px solid #eef2f6;
+        text-align: center;
+      }
+      .stat-box .num {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #2d3436;
+      }
+      .stat-box .label {
+        font-size: 0.65rem;
+        color: #636e72;
+        text-transform: uppercase;
+      }
+      @media (max-width: 600px) {
+        .stats-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .footer {
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.78rem;
+        color: #b0bec5;
+        border-top: 1px solid #eef2f6;
+        margin-top: 2rem;
+      }
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="header-logo">
+          <span class="logo-icon">🦷</span>
+          Dental <span>Care</span>
+        </a>
+        <div style="display: flex; gap: 0.5rem; align-items: center">
+          <button
+            onclick="showAdminLogin()"
+            style="
+              background: none;
+              border: none;
+              font-size: 0.75rem;
+              color: #636e72;
+              cursor: pointer;
+              font-family: inherit;
+            "
+          >
+            🔐 Admin
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Page Title -->
+      <div id="pageTitle">
+        <h1 class="page-title">Agenda tu consulta</h1>
+        <p class="page-subtitle">
+          En 4 simples pasos puedes reservar tu hora con el especialista que
+          necesitas.
+        </p>
+      </div>
+
+      <!-- Steps -->
+      <div id="stepsBar" class="steps-bar">
+        <div class="step-dot active" id="s1">
+          1<span class="step-label active">Tratamiento</span>
+        </div>
+        <div class="step-line pending" id="l1"></div>
+        <div class="step-dot pending" id="s2">
+          2<span class="step-label pending">Fecha</span>
+        </div>
+        <div class="step-line pending" id="l2"></div>
+        <div class="step-dot pending" id="s3">
+          3<span class="step-label pending">Datos</span>
+        </div>
+        <div class="step-line pending" id="l3"></div>
+        <div class="step-dot pending" id="s4">
+          4<span class="step-label pending">Confirmar</span>
+        </div>
+      </div>
+
+      <!-- Step Content -->
+      <div id="stepContent"></div>
+
+      <!-- Footer -->
+      <div class="footer">
+        © 2026 Clínica Dental Care. Av. Providencia 1234, Santiago | +56 9 1234
+        5678
+      </div>
+    </div>
+
+    <script>
+      // =============================================
+      // DATOS
+      // =============================================
+      const DOCTORS = [
+        {
+          id: "dra-garcia",
+          nombre: "Dra. María García",
+          especialidad: "Odontología General & Estética Dental",
+          foto: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=100&q=80",
+          duracion: 30,
+          colacion: { inicio: "13:00", fin: "14:00" },
+          horarios: {
+            0: null,
+            1: { i: "09:00", f: "18:00" },
+            2: { i: "09:00", f: "18:00" },
+            3: { i: "09:00", f: "18:00" },
+            4: { i: "09:00", f: "18:00" },
+            5: { i: "09:00", f: "17:00" },
+            6: { i: "10:00", f: "14:00" },
+          },
+        },
+        {
+          id: "dr-martinez",
+          nombre: "Dr. Carlos Martínez",
+          especialidad: "Ortodoncia & Implantología",
+          foto: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&q=80",
+          duracion: 45,
+          colacion: { inicio: "13:00", fin: "14:30" },
+          horarios: {
+            0: null,
+            1: { i: "08:30", f: "17:30" },
+            2: { i: "08:30", f: "17:30" },
+            3: { i: "08:30", f: "17:30" },
+            4: { i: "08:30", f: "17:30" },
+            5: { i: "08:30", f: "16:00" },
+            6: { i: "09:00", f: "13:00" },
+          },
+        },
+        {
+          id: "dra-lopez",
+          nombre: "Dra. Andrea López",
+          especialidad: "Endodoncia & Odontopediatría",
+          foto: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&q=80",
+          duracion: 30,
+          colacion: { inicio: "13:00", fin: "14:00" },
+          horarios: {
+            0: null,
+            1: { i: "09:30", f: "18:30" },
+            2: { i: "09:30", f: "18:30" },
+            3: { i: "09:30", f: "18:30" },
+            4: { i: "09:30", f: "18:30" },
+            5: { i: "09:30", f: "17:00" },
+            6: null,
+          },
+        },
+        {
+          id: "dr-rodriguez",
+          nombre: "Dr. Felipe Rodríguez",
+          especialidad: "Cirugía Oral & Maxilofacial",
+          foto: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=100&q=80",
+          duracion: 60,
+          colacion: { inicio: "12:30", fin: "14:00" },
+          horarios: {
+            0: null,
+            1: { i: "08:00", f: "16:00" },
+            2: { i: "08:00", f: "16:00" },
+            3: { i: "08:00", f: "16:00" },
+            4: { i: "08:00", f: "16:00" },
+            5: { i: "08:00", f: "15:00" },
+            6: null,
+          },
+        },
+      ];
+      const TRATAMIENTOS = [
+        {
+          id: "consulta",
+          nombre: "Consulta General",
+          desc: "Evaluación completa y diagnóstico.",
+          precio: "Desde $35.000",
+          icono: "🩺",
+          doctores: ["dra-garcia", "dr-martinez", "dra-lopez"],
+        },
+        {
+          id: "limpieza",
+          nombre: "Limpieza Dental",
+          desc: "Profilaxis profesional, remoción de sarro.",
+          precio: "Desde $45.000",
+          icono: "✨",
+          doctores: ["dra-garcia", "dra-lopez"],
+        },
+        {
+          id: "blanqueamiento",
+          nombre: "Blanqueamiento Dental",
+          desc: "Resultados visibles en 1 sesión.",
+          precio: "Desde $120.000",
+          icono: "💎",
+          doctores: ["dra-garcia"],
+        },
+        {
+          id: "ortodoncia",
+          nombre: "Ortodoncia (Brackets)",
+          desc: "Brackets estéticos o metálicos.",
+          precio: "Desde $280.000",
+          icono: "🦷",
+          doctores: ["dr-martinez"],
+        },
+        {
+          id: "implante",
+          nombre: "Implante Dental",
+          desc: "Solución permanente con titanio.",
+          precio: "Desde $450.000",
+          icono: "🦷",
+          doctores: ["dr-martinez"],
+        },
+        {
+          id: "endodoncia",
+          nombre: "Endodoncia (Conductos)",
+          desc: "Tratamiento de conductos.",
+          precio: "Desde $150.000",
+          icono: "🦷",
+          doctores: ["dra-lopez"],
+        },
+        {
+          id: "extraccion",
+          nombre: "Extracción Dental",
+          desc: "Extracción simple o compleja.",
+          precio: "Desde $60.000",
+          icono: "🦷",
+          doctores: ["dr-rodriguez"],
+        },
+        {
+          id: "cirugia",
+          nombre: "Cirugía Oral",
+          desc: "Cirugía de terceros molares.",
+          precio: "Desde $200.000",
+          icono: "🏥",
+          doctores: ["dr-rodriguez"],
+        },
+        {
+          id: "pediatria",
+          nombre: "Odontopediatría",
+          desc: "Atención dental para niños.",
+          precio: "Desde $30.000",
+          icono: "👶",
+          doctores: ["dra-lopez"],
+        },
+        {
+          id: "resina",
+          nombre: "Resinas / Obturaciones",
+          desc: "Restauración estética.",
+          precio: "Desde $40.000",
+          icono: "🦷",
+          doctores: ["dra-garcia", "dra-lopez"],
+        },
+      ];
+
+      // =============================================
+      // ESTADO
+      // =============================================
+      let state = {
+        step: 1,
+        tratamiento: null,
+        doctor: null,
+        fecha: null,
+        hora: null,
+        paciente: { nombre: "", rut: "", telefono: "", email: "", notas: "" },
+      };
+      const ADMIN_KEY = "admin123";
+      let adminAutenticado = false;
+
+      // =============================================
+      // AGENDA (localStorage)
+      // =============================================
+      function getAgenda() {
+        try {
+          return JSON.parse(localStorage.getItem("dental_agenda")) || [];
+        } catch (e) {
+          return [];
+        }
+      }
+      function saveAgenda(agenda) {
+        localStorage.setItem("dental_agenda", JSON.stringify(agenda));
+      }
+      function addCita(cita) {
+        const agenda = getAgenda();
+        agenda.push({
+          ...cita,
+          id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+          creada: new Date().toISOString(),
+        });
+        saveAgenda(agenda);
+        return agenda[agenda.length - 1];
+      }
+      function cancelCita(id) {
+        let agenda = getAgenda();
+        agenda = agenda.filter((c) => c.id !== id);
+        saveAgenda(agenda);
+      }
+      function getCitasPorFecha(fecha) {
+        return getAgenda().filter((c) => c.fecha === fecha);
+      }
+
+      // =============================================
+      // SLOTS
+      // =============================================
+      function generarSlots(doctorId, fechaStr) {
+        const doc = DOCTORS.find((d) => d.id === doctorId);
+        if (!doc) return [];
+        const d = new Date(fechaStr + "T12:00:00-04:00");
+        const dia = d.getDay();
+        const horario = doc.horarios[dia];
+        if (!horario) return [];
+
+        const [hi, mi] = horario.i.split(":").map(Number);
+        const [hf, mf] = horario.f.split(":").map(Number);
+        const dur = doc.duracion;
+
+        let ci = -1,
+          cf = -1;
+        if (doc.colacion) {
+          [ci] = doc.colacion.inicio.split(":").map(Number);
+          [cf] = doc.colacion.fin.split(":").map(Number);
+          ci = ci * 60 + parseInt(doc.colacion.inicio.split(":")[1]);
+          cf = cf * 60 + parseInt(doc.colacion.fin.split(":")[1]);
+        }
+
+        const inicio = hi * 60 + mi;
+        const fin = hf * 60 + mf;
+        const slots = [];
+        let cur = inicio;
+
+        while (cur + dur <= fin) {
+          if (ci >= 0 && cur >= ci && cur < cf) {
+            cur = cf;
+            continue;
+          }
+          const h = Math.floor(cur / 60);
+          const m = cur % 60;
+          slots.push(
+            `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`,
+          );
+          cur += dur;
+        }
+
+        // Obtener slots ocupados de localStorage
+        const ocupados = getCitasPorFecha(fechaStr)
+          .filter((c) => c.doctorId === doctorId)
+          .map((c) => c.hora);
+
+        return slots.filter((s) => !ocupados.includes(s));
+      }
+
+      function getDoctoresPorTratamiento(tratId) {
+        const t = TRATAMIENTOS.find((x) => x.id === tratId);
+        if (!t) return [];
+        return DOCTORS.filter((d) => t.doctores.includes(d.id));
+      }
+
+      // =============================================
+      // DIAS DEL MES
+      // =============================================
+      let calMonth = new Date().getMonth();
+      let calYear = new Date().getFullYear();
+
+      function getDiasMes(month, year) {
+        return new Date(year, month + 1, 0).getDate();
+      }
+      function getPrimerDia(month, year) {
+        return new Date(year, month, 1).getDay();
+      }
+      function isFechaPasada(day, month, year) {
+        const date = new Date(year, month, day);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return date < today;
+      }
+      function isFechaValida(day, month, year, doctorId) {
+        if (isFechaPasada(day, month, year)) return false;
+        const doc = DOCTORS.find((d) => d.id === doctorId);
+        if (!doc) return false;
+        const d = new Date(year, month, day);
+        const dia = d.getDay();
+        return !!doc.horarios[dia];
+      }
+
+      // =============================================
+      // RENDER
+      // =============================================
+      function updateSteps() {
+        for (let i = 1; i <= 4; i++) {
+          const dot = document.getElementById("s" + i);
+          const line = document.getElementById("l" + (i - 1));
+          dot.className = "step-dot";
+          if (i === state.step) {
+            dot.classList.add("active");
+          } else if (i < state.step) {
+            dot.classList.add("done");
+          } else {
+            dot.classList.add("pending");
+          }
+          const lbl = dot.querySelector(".step-label");
+          if (lbl) {
+            lbl.className = "step-label";
+            lbl.classList.add(
+              i === state.step ? "active" : i < state.step ? "done" : "pending",
+            );
+          }
+          if (line) {
+            line.className = "step-line";
+            line.classList.add(i < state.step ? "done" : "pending");
+          }
+        }
+      }
+
+      function render() {
+        updateSteps();
+        const el = document.getElementById("stepContent");
+
+        if (state.step > 4) {
+          renderSuccess(el);
+          return;
+        }
+
+        switch (state.step) {
+          case 1:
+            renderTratamientos(el);
+            break;
+          case 2:
+            renderCalendario(el);
+            break;
+          case 3:
+            renderFormulario(el);
+            break;
+          case 4:
+            renderConfirmacion(el);
+            break;
+        }
+      }
+
+      // =============================================
+      // STEP 1: TRATAMIENTOS
+      // =============================================
+      function renderTratamientos(el) {
+        el.innerHTML = `
+    <div class="card">
+      <h3 style="font-size:1.1rem;margin-bottom:0.3rem;">1. ¿Qué tratamiento necesitas?</h3>
+      <p style="font-size:0.85rem;color:#636e72;margin-bottom:1.2rem;">Selecciona el tratamiento que deseas realizarte.</p>
+      <div class="grid-2" id="tratGrid"></div>
+      <div id="docSection" class="hidden" style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid #eef2f6;">
+        <h3 style="font-size:1.1rem;margin-bottom:0.3rem;">2. Elige tu especialista</h3>
+        <p style="font-size:0.85rem;color:#636e72;margin-bottom:1.2rem;" id="docSubtitle"></p>
+        <div class="grid-2" id="docGrid"></div>
+      </div>
+      <div class="btn-row">
+        <div></div>
+        <button class="btn btn-primary" id="step1Next" disabled>Continuar →</button>
+      </div>
+    </div>
+  `;
+
+        const tratGrid = document.getElementById("tratGrid");
+        TRATAMIENTOS.forEach((t) => {
+          const btn = document.createElement("button");
+          btn.className =
+            "option-card" + (state.tratamiento === t.id ? " selected" : "");
+          btn.innerHTML = `<div style="display:flex;align-items:flex-start;gap:0.6rem;">
+      <span style="font-size:1.4rem;">${t.icono}</span>
+      <div><h4>${t.nombre}</h4><p>${t.desc}</p><span class="tag">${t.precio}</span></div>
+    </div>`;
+          btn.onclick = () => {
+            state.tratamiento = t.id;
+            state.doctor = null;
+            render();
+          };
+          tratGrid.appendChild(btn);
+        });
+
+        if (state.tratamiento) {
+          const t = TRATAMIENTOS.find((x) => x.id === state.tratamiento);
+          const docs = getDoctoresPorTratamiento(state.tratamiento);
+          document.getElementById("docSection").classList.remove("hidden");
+          document.getElementById("docSubtitle").textContent =
+            `Selecciona al profesional que realizará tu ${t.nombre.toLowerCase()}.`;
+          const docGrid = document.getElementById("docGrid");
+          docs.forEach((d) => {
+            const btn = document.createElement("button");
+            btn.className =
+              "option-card" + (state.doctor === d.id ? " selected" : "");
+            btn.innerHTML = `<div style="display:flex;align-items:center;gap:0.6rem;">
+        <img src="${d.foto}" alt="${d.nombre}" style="width:42px;height:42px;border-radius:50%;object-fit:cover;">
+        <div><h4>${d.nombre}</h4><p>${d.especialidad}</p><span class="tag">${d.duracion} min</span></div>
+      </div>`;
+            btn.onclick = () => {
+              state.doctor = d.id;
+              render();
+            };
+            docGrid.appendChild(btn);
+          });
+        }
+
+        document.getElementById("step1Next").disabled = !(
+          state.tratamiento && state.doctor
+        );
+        document.getElementById("step1Next").onclick = () => {
+          state.step = 2;
+          render();
+        };
+      }
+
+      // =============================================
+      // STEP 2: CALENDARIO
+      // =============================================
+      function renderCalendario(el) {
+        const mes = [
+          "Enero",
+          "Febrero",
+          "Marzo",
+          "Abril",
+          "Mayo",
+          "Junio",
+          "Julio",
+          "Agosto",
+          "Septiembre",
+          "Octubre",
+          "Noviembre",
+          "Diciembre",
+        ];
+        const doc = DOCTORS.find((d) => d.id === state.doctor);
+        const dias = getDiasMes(calMonth, calYear);
+        const primerDia = getPrimerDia(calMonth, calYear);
+        const hoy = new Date();
+
+        el.innerHTML = `
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid #eef2f6;">
+        <img src="${doc.foto}" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">
+        <div><strong style="font-size:0.85rem;">${doc.nombre}</strong><br><span style="font-size:0.75rem;color:#636e72;">Duración: ${doc.duracion} min</span></div>
+        <button class="btn-ghost" style="margin-left:auto;font-size:0.75rem;padding:0.3rem 0.8rem;" onclick="state.step=1;render();">← Volver</button>
+      </div>
+      <div class="calendar-header">
+        <button class="cal-nav" id="calPrev" ${calMonth === hoy.getMonth() && calYear === hoy.getFullYear() ? "disabled" : ""}>‹</button>
+        <h4>${mes[calMonth]} ${calYear}</h4>
+        <button class="cal-nav" id="calNext">›</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div id="timeSection" class="hidden" style="border-top:1px solid #eef2f6;padding-top:1rem;">
+        <h4 style="font-size:0.9rem;color:#2d3436;margin-bottom:0.3rem;">Horarios disponibles</h4>
+        <p style="font-size:0.78rem;color:#636e72;margin-bottom:0.5rem;" id="fechaLabel"></p>
+        <div class="time-grid" id="timeGrid"></div>
+      </div>
+      <div class="btn-row" style="margin-top:1rem;">
+        <button class="btn btn-ghost" onclick="state.step=1;render();">← Volver</button>
+        <button class="btn btn-primary" id="step2Next" disabled>Continuar →</button>
+      </div>
+    </div>
+  `;
+
+        // Calendario
+        const calGrid = document.getElementById("calGrid");
+        ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"].forEach((d) => {
+          const c = document.createElement("div");
+          c.className = "cal-header-cell";
+          c.textContent = d;
+          calGrid.appendChild(c);
+        });
+        for (let i = 0; i < primerDia; i++) {
+          const c = document.createElement("div");
+          calGrid.appendChild(c);
+        }
+        for (let d = 1; d <= dias; d++) {
+          const btn = document.createElement("button");
+          btn.className = "cal-day";
+          btn.textContent = d;
+          const dateStr = `${calYear}-${String(calMonth + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+          const esHoy =
+            d === hoy.getDate() &&
+            calMonth === hoy.getMonth() &&
+            calYear === hoy.getFullYear();
+          if (esHoy) btn.classList.add("today");
+          if (state.fecha === dateStr) btn.classList.add("selected");
+          if (!isFechaValida(d, calMonth, calYear, state.doctor)) {
+            btn.disabled = true;
+          } else {
+            btn.onclick = () => {
+              state.fecha = dateStr;
+              state.hora = null;
+              render();
+            };
+          }
+          calGrid.appendChild(btn);
+        }
+
+        document.getElementById("calPrev").onclick = () => {
+          if (calMonth === 0) {
+            calMonth = 11;
+            calYear--;
+          } else {
+            calMonth--;
+          }
+          render();
+        };
+        document.getElementById("calNext").onclick = () => {
+          if (calMonth === 11) {
+            calMonth = 0;
+            calYear++;
+          } else {
+            calMonth++;
+          }
+          render();
+        };
+
+        // Horarios
+        if (state.fecha) {
+          document.getElementById("timeSection").classList.remove("hidden");
+          const f = new Date(state.fecha);
+          document.getElementById("fechaLabel").textContent =
+            f.toLocaleDateString("es-CL", {
+              weekday: "long",
+              day: "numeric",
+              month: "long",
+            });
+          const slots = generarSlots(state.doctor, state.fecha);
+          const timeGrid = document.getElementById("timeGrid");
+          if (slots.length === 0) {
+            timeGrid.innerHTML =
+              '<p style="grid-column:1/-1;text-align:center;color:#d68910;font-size:0.85rem;padding:1rem;">No hay horarios disponibles para esta fecha.</p>';
+          } else {
+            slots.forEach((s) => {
+              const btn = document.createElement("button");
+              btn.className =
+                "time-btn" + (state.hora === s ? " selected" : "");
+              btn.textContent = s;
+              btn.onclick = () => {
+                state.hora = s;
+                render();
+              };
+              timeGrid.appendChild(btn);
+            });
+          }
+        }
+        document.getElementById("step2Next").disabled = !(
+          state.fecha && state.hora
+        );
+        document.getElementById("step2Next").onclick = () => {
+          state.step = 3;
+          render();
+        };
+      }
+
+      // =============================================
+      // STEP 3: FORMULARIO
+      // =============================================
+      function renderFormulario(el) {
+        const p = state.paciente;
+        el.innerHTML = `
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;">
+        <button class="btn-ghost" style="font-size:0.85rem;padding:0.3rem 0.8rem;" onclick="state.step=2;render();">← Volver</button>
+        <h3 style="font-size:1.1rem;">Tus datos personales</h3>
+      </div>
+      <form id="patientForm" onsubmit="return false;">
+        <div class="form-group">
+          <label>Nombre Completo *</label>
+          <input type="text" id="fNombre" placeholder="Ej: Juan Pérez González" value="${p.nombre}" class="${p.nombreError ? "error" : ""}">
+          <div class="error-text" id="eNombre">${p.nombreError || ""}</div>
+        </div>
+        <div class="form-group">
+          <label>RUT *</label>
+          <input type="text" id="fRut" placeholder="Ej: 12.345.678-9" value="${p.rut}" maxlength="12" class="${p.rutError ? "error" : ""}">
+          <div class="error-text" id="eRut">${p.rutError || ""}</div>
+        </div>
+        <div class="form-group">
+          <label>Teléfono / WhatsApp *</label>
+          <input type="tel" id="fTelefono" placeholder="Ej: +569 1234 5678" value="${p.telefono}" class="${p.telError ? "error" : ""}">
+          <div class="error-text" id="eTel">${p.telError || ""}</div>
+        </div>
+        <div class="form-group">
+          <label>Correo Electrónico *</label>
+          <input type="email" id="fEmail" placeholder="Ej: juan@correo.cl" value="${p.email}" class="${p.emailError ? "error" : ""}">
+          <div class="error-text" id="eEmail">${p.emailError || ""}</div>
+        </div>
+        <div class="form-group">
+          <label>Notas (opcional)</label>
+          <textarea id="fNotas" placeholder="¿Algo que debamos saber? (alergias, medicamentos, etc.)" style="resize:none;height:80px;">${p.notas}</textarea>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn btn-ghost" onclick="state.step=2;render();">Volver</button>
+          <button type="button" class="btn btn-primary" onclick="submitForm()">Revisar y confirmar →</button>
+        </div>
+      </form>
+    </div>
+  `;
+
+        document.getElementById("fRut").addEventListener("input", function () {
+          let val = this.value.replace(/[^0-9kK]/g, "").toUpperCase();
+          if (val.length === 0) {
+            this.value = "";
+            return;
+          }
+          const dv = val.slice(-1);
+          let cuerpo = val.slice(0, -1);
+          if (cuerpo.length > 8) cuerpo = cuerpo.slice(0, 8);
+          let formateado = "";
+          const arr = cuerpo.split("");
+          let cont = 0;
+          for (let i = arr.length - 1; i >= 0; i--) {
+            if (cont > 0 && cont % 3 === 0) formateado = "." + formateado;
+            formateado = arr[i] + formateado;
+            cont++;
+          }
+          this.value = formateado + "-" + dv;
+        });
+      }
+
+      function submitForm() {
+        const p = state.paciente;
+        p.nombre = document.getElementById("fNombre").value.trim();
+        p.rut = document.getElementById("fRut").value.trim();
+        p.telefono = document.getElementById("fTelefono").value.trim();
+        p.email = document.getElementById("fEmail").value.trim();
+        p.notas = document.getElementById("fNotas").value.trim();
+
+        let valid = true;
+        p.nombreError = p.rutError = p.telError = p.emailError = "";
+
+        if (!p.nombre) {
+          p.nombreError = "El nombre es obligatorio";
+          valid = false;
+        }
+        if (!p.rut) {
+          p.rutError = "El RUT es obligatorio";
+          valid = false;
+        } else if (
+          !/^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}[-][0-9kK]{1}$/.test(p.rut)
+        ) {
+          p.rutError = "Formato inválido (ej: 12.345.678-9)";
+          valid = false;
+        }
+        if (!p.telefono) {
+          p.telError = "El teléfono es obligatorio";
+          valid = false;
+        } else if (
+          !/^[+]?[0-9]{8,15}$/.test(p.telefono.replace(/[\s-]/g, ""))
+        ) {
+          p.telError = "Formato inválido";
+          valid = false;
+        }
+        if (!p.email) {
+          p.emailError = "El email es obligatorio";
+          valid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)) {
+          p.emailError = "Formato inválido";
+          valid = false;
+        }
+
+        if (valid) {
+          state.step = 4;
+          render();
+        } else {
+          render();
+        }
+      }
+
+      // =============================================
+      // STEP 4: CONFIRMACIÓN
+      // =============================================
+      function renderConfirmacion(el) {
+        const doc = DOCTORS.find((d) => d.id === state.doctor);
+        const trat = TRATAMIENTOS.find((t) => t.id === state.tratamiento);
+        const fecha = new Date(state.fecha).toLocaleDateString("es-CL", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+        const p = state.paciente;
+
+        el.innerHTML = `
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+        <button class="btn-ghost" style="font-size:0.85rem;padding:0.3rem 0.8rem;" onclick="state.step=3;render();">← Volver</button>
+        <h3 style="font-size:1.1rem;">Confirma tu cita</h3>
+      </div>
+      <div class="summary-box">
+        <h4 style="font-size:0.78rem;color:#0096c7;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.8rem;">Resumen de tu cita</h4>
+        <div class="row"><span>🦷</span><div><div class="label">Especialista</div><div class="value">${doc.nombre}</div></div></div>
+        <div class="row"><span>💊</span><div><div class="label">Tratamiento</div><div class="value">${trat.nombre}</div></div></div>
+        <div class="row"><span>📅</span><div><div class="label">Fecha y hora</div><div class="value">${fecha} a las ${state.hora} hrs</div></div></div>
+        <div class="row"><span>⏱</span><div><div class="label">Duración estimada</div><div class="value">${doc.duracion} minutos</div></div></div>
+      </div>
+      <div style="background:#f8f9fa;border-radius:12px;padding:0.8rem 1rem;">
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:0.2rem 0;"><span style="color:#636e72;">Nombre:</span><strong>${p.nombre}</strong></div>
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:0.2rem 0;"><span style="color:#636e72;">RUT:</span><strong>${p.rut}</strong></div>
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:0.2rem 0;"><span style="color:#636e72;">Teléfono:</span><strong>${p.telefono}</strong></div>
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:0.2rem 0;"><span style="color:#636e72;">Email:</span><strong>${p.email}</strong></div>
+        ${p.notas ? `<div style="padding:0.5rem 0 0;border-top:1px solid #e0e0e0;margin-top:0.3rem;"><span style="font-size:0.78rem;color:#636e72;">Notas:</span><p style="font-size:0.85rem;">${p.notas}</p></div>` : ""}
+      </div>
+      <div id="confirmError" class="hidden" style="background:#fde8e8;color:#e74c3c;padding:0.8rem;border-radius:10px;font-size:0.85rem;margin-top:1rem;text-align:center;"></div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" onclick="state.step=3;render();">Volver</button>
+        <button class="btn btn-primary" id="confirmBtn" onclick="confirmarCita()">✅ Confirmar cita</button>
+      </div>
+    </div>
+  `;
+      }
+
+      function confirmarCita() {
+        const btn = document.getElementById("confirmBtn");
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner"></span> Agendando...';
+
+        // Verificar disponibilidad nuevamente
+        const slots = generarSlots(state.doctor, state.fecha);
+        if (!slots.includes(state.hora)) {
+          document.getElementById("confirmError").classList.remove("hidden");
+          document.getElementById("confirmError").textContent =
+            "Este horario ya no está disponible. Por favor, selecciona otro.";
+          btn.disabled = false;
+          btn.innerHTML = "✅ Confirmar cita";
+          return;
+        }
+
+        const doc = DOCTORS.find((d) => d.id === state.doctor);
+        const trat = TRATAMIENTOS.find((t) => t.id === state.tratamiento);
+        const cita = {
+          doctorId: state.doctor,
+          doctorNombre: doc.nombre,
+          tratamiento: trat.nombre,
+          fecha: state.fecha,
+          hora: state.hora,
+          paciente: { ...state.paciente },
+        };
+
+        addCita(cita);
+        state.step = 5;
+        render();
+      }
+
+      // =============================================
+      // STEP 5: ÉXITO
+      // =============================================
+      function renderSuccess(el) {
+        const doc = DOCTORS.find((d) => d.id === state.doctor);
+        const trat = TRATAMIENTOS.find((t) => t.id === state.tratamiento);
+        const fecha = new Date(state.fecha).toLocaleDateString("es-CL", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+
+        document.getElementById("pageTitle").innerHTML = "";
+        document.getElementById("stepsBar").innerHTML = "";
+
+        el.innerHTML = `
+    <div class="card" style="text-align:center;">
+      <div class="success-icon">✅</div>
+      <h2 style="font-size:1.4rem;margin-bottom:0.3rem;">¡Cita agendada con éxito!</h2>
+      <p style="font-size:0.9rem;color:#636e72;margin-bottom:1.5rem;">Hemos registrado tu cita. Te llegará un resumen a <strong>${state.paciente.email}</strong></p>
+      <div class="summary-box">
+        <div class="row"><span>🦷</span><div><div class="label">Especialista</div><div class="value">${doc.nombre}</div></div></div>
+        <div class="row"><span>💊</span><div><div class="label">Tratamiento</div><div class="value">${trat.nombre}</div></div></div>
+        <div class="row"><span>📅</span><div><div class="label">Fecha</div><div class="value">${fecha}</div></div></div>
+        <div class="row"><span>⏰</span><div><div class="label">Hora</div><div class="value">${state.hora} hrs</div></div></div>
+        <div class="row"><span>📍</span><div><div class="label">Dirección</div><div class="value">Av. Providencia 1234, Santiago</div></div></div>
+      </div>
+      <div style="background:#fef9e7;border-radius:12px;padding:0.8rem 1rem;margin:1rem 0;text-align:left;font-size:0.82rem;">
+        <strong>💡 Recuerda:</strong>
+        <ul style="margin-top:0.3rem;padding-left:1.2rem;color:#7d6608;">
+          <li>Llega 15 minutos antes de tu cita.</li>
+          <li>Trae tu cédula de identidad.</li>
+          <li>Si necesitas cancelar, hazlo con 24 hrs de anticipación.</li>
+        </ul>
+      </div>
+      <a href="tel:+56912345678" class="btn btn-primary btn-block">📞 +56 9 1234 5678</a>
+      <a href="." class="btn btn-ghost btn-block" style="margin-top:0.5rem;">Volver al inicio</a>
+    </div>
+  `;
+      }
+
+      // =============================================
+      // ADMIN
+      // =============================================
+      function showAdminLogin() {
+        const overlay = document.createElement("div");
+        overlay.className = "modal-overlay";
+        overlay.id = "adminOverlay";
+        overlay.innerHTML = `
+    <div class="modal">
+      <div class="success-icon" style="width:60px;height:60px;font-size:1.5rem;">🔐</div>
+      <h3 style="margin-bottom:0.5rem;">Panel de Administración</h3>
+      <p style="font-size:0.85rem;color:#636e72;margin-bottom:1.2rem;">Ingresa la clave de acceso</p>
+      <input type="password" id="adminKeyInput" placeholder="Clave de acceso" style="width:100%;padding:0.7rem 1rem;border:1.5px solid #e0e0e0;border-radius:10px;font-family:inherit;font-size:0.9rem;outline:none;margin-bottom:1rem;">
+      <div id="adminLoginError" class="hidden" style="color:#e74c3c;font-size:0.8rem;margin-bottom:0.5rem;">Clave incorrecta</div>
+      <button class="btn btn-primary btn-block" onclick="checkAdminKey()">Ingresar</button>
+      <button class="btn btn-ghost btn-block" style="margin-top:0.3rem;" onclick="closeAdminOverlay()">Cancelar</button>
+    </div>
+  `;
+        document.body.appendChild(overlay);
+        document
+          .getElementById("adminKeyInput")
+          .addEventListener("keydown", (e) => {
+            if (e.key === "Enter") checkAdminKey();
+          });
+        setTimeout(() => document.getElementById("adminKeyInput").focus(), 100);
+      }
+
+      function closeAdminOverlay() {
+        const o = document.getElementById("adminOverlay");
+        if (o) o.remove();
+      }
+
+      function checkAdminKey() {
+        const key = document.getElementById("adminKeyInput").value;
+        if (key === ADMIN_KEY) {
+          adminAutenticado = true;
+          closeAdminOverlay();
+          renderAdminDashboard();
+        } else {
+          document.getElementById("adminLoginError").classList.remove("hidden");
+        }
+      }
+
+      function renderAdminDashboard() {
+        document.getElementById("pageTitle").innerHTML =
+          `<h1 class="page-title" style="font-size:1.3rem;">📋 Panel Administrativo</h1>`;
+        document.getElementById("stepsBar").innerHTML = "";
+
+        const el = document.getElementById("stepContent");
+        const hoy = new Date().toISOString().split("T")[0];
+        let filtroDoctor = "all";
+        let selectedDate = hoy;
+
+        function loadDashboard() {
+          const agenda = getAgenda()
+            .filter((c) => c.fecha === selectedDate)
+            .sort((a, b) => a.hora.localeCompare(b.hora));
+          const filtradas =
+            filtroDoctor === "all"
+              ? agenda
+              : agenda.filter((c) => c.doctorId === filtroDoctor);
+
+          el.innerHTML = `
+      <div style="max-width:800px;margin:0 auto;">
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;align-items:center;justify-content:space-between;">
+          <div style="display:flex;gap:0.5rem;align-items:center;">
+            <input type="date" id="adminDate" value="${selectedDate}" style="padding:0.5rem 0.8rem;border:1.5px solid #e0e0e0;border-radius:10px;font-family:inherit;font-size:0.85rem;">
+            <button class="btn btn-ghost" style="font-size:0.75rem;padding:0.4rem 0.8rem;" onclick="abrirBloqueo('${selectedDate}')">🔒 Bloquear</button>
+          </div>
+          <button class="admin-btn-link" onclick="adminLogout()">Cerrar sesión</button>
+        </div>
+        <div class="stats-row">
+          <div class="stat-box"><div class="num">${agenda.length}</div><div class="label">Citas hoy</div></div>
+          <div class="stat-box"><div class="num">${new Set(agenda.map((c) => c.doctorId)).size}</div><div class="label">Doctores</div></div>
+          <div class="stat-box"><div class="num">${new Set(agenda.map((c) => c.paciente.nombre)).size}</div><div class="label">Pacientes</div></div>
+          <div class="stat-box"><div class="num">${agenda.length > 0 ? agenda[0].hora : "--:--"}</div><div class="label">Próxima</div></div>
+        </div>
+        <div class="filter-pills">
+          <button class="filter-pill ${filtroDoctor === "all" ? "active" : ""}" onclick="actualizarFiltro('all')">Todos (${agenda.length})</button>
+          ${DOCTORS.map((d) => `<button class="filter-pill ${filtroDoctor === d.id ? "active" : ""}" onclick="actualizarFiltro('${d.id}')">${d.nombre.split(" ")[1]} (${agenda.filter((c) => c.doctorId === d.id).length})</button>`).join("")}
+        </div>
+        <div id="citasList">
+          ${
+            filtradas.length === 0
+              ? `
+            <div style="text-align:center;padding:2rem;color:#636e72;">
+              <div style="font-size:2rem;margin-bottom:0.5rem;">📅</div>
+              <p>No hay citas para esta fecha.</p>
+            </div>
+          `
+              : filtradas
+                  .map(
+                    (c) => `
+            <div class="appt-card">
+              <div class="appt-time">${c.hora}</div>
+              <div class="appt-info">
+                <h4>${c.paciente.nombre}</h4>
+                <div class="meta">
+                  <span style="background:#e0f7fa;color:#0096c7;padding:0.1rem 0.5rem;border-radius:50px;font-size:0.7rem;">${c.doctorNombre}</span>
+                  ${c.tratamiento ? ` <span style="font-size:0.7rem;">${c.tratamiento}</span>` : ""}
+                  <br>RUT: ${c.paciente.rut}<br>
+                  📞 <a href="tel:${c.paciente.telefono}">${c.paciente.telefono}</a>
+                  ${c.paciente.email ? ` | ${c.paciente.email}` : ""}
+                </div>
+              </div>
+              <div class="appt-actions">
+                <a href="tel:${c.paciente.telefono}" class="appt-btn" title="Llamar">📞</a>
+                <button class="appt-btn danger" onclick="cancelarCitaAdmin('${c.id}')" title="Cancelar cita">🗑️</button>
+              </div>
+            </div>
+          `,
+                  )
+                  .join("")
+          }
+        </div>
+      </div>
+    `;
+
+          document
+            .getElementById("adminDate")
+            .addEventListener("change", function () {
+              selectedDate = this.value;
+              loadDashboard();
+            });
+
+          window.actualizarFiltro = function (id) {
+            filtroDoctor = id;
+            loadDashboard();
+          };
+        }
+
+        loadDashboard();
+
+        window.abrirBloqueo = function (fecha) {
+          const overlay = document.createElement("div");
+          overlay.className = "modal-overlay";
+          overlay.id = "blockOverlay";
+          overlay.innerHTML = `
+      <div class="modal">
+        <h3 style="margin-bottom:1rem;">🔒 Bloquear Horario</h3>
+        <div style="text-align:left;">
+          <div class="form-group">
+            <label>Doctor</label>
+            <select id="blockDoctor" style="width:100%;padding:0.7rem;border:1.5px solid #e0e0e0;border-radius:10px;font-family:inherit;font-size:0.85rem;">
+              ${DOCTORS.map((d) => `<option value="${d.id}">${d.nombre}</option>`).join("")}
+            </select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+            <div class="form-group">
+              <label>Desde</label>
+              <input type="time" id="blockInicio" value="09:00" style="width:100%;padding:0.7rem;border:1.5px solid #e0e0e0;border-radius:10px;font-family:inherit;font-size:0.85rem;">
+            </div>
+            <div class="form-group">
+              <label>Hasta</label>
+              <input type="time" id="blockFin" value="10:00" style="width:100%;padding:0.7rem;border:1.5px solid #e0e0e0;border-radius:10px;font-family:inherit;font-size:0.85rem;">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Motivo</label>
+            <input type="text" id="blockMotivo" placeholder="Ej: Reunión administrativa" style="width:100%;padding:0.7rem;border:1.5px solid #e0e0e0;border-radius:10px;font-family:inherit;font-size:0.85rem;">
+          </div>
+        </div>
+        <div style="display:flex;gap:0.5rem;margin-top:1rem;justify-content:flex-end;">
+          <button class="btn btn-ghost" onclick="document.getElementById('blockOverlay').remove()">Cancelar</button>
+          <button class="btn btn-primary" onclick="ejecutarBloqueo('${fecha}')">Bloquear</button>
+        </div>
+      </div>
+    `;
+          document.body.appendChild(overlay);
+        };
+
+        window.ejecutarBloqueo = function (fecha) {
+          const doctorId = document.getElementById("blockDoctor").value;
+          const inicio = document.getElementById("blockInicio").value;
+          const fin = document.getElementById("blockFin").value;
+          const motivo = document.getElementById("blockMotivo").value;
+          if (!motivo) {
+            alert("Ingresa un motivo");
+            return;
+          }
+          const doc = DOCTORS.find((d) => d.id === doctorId);
+          const cita = {
+            doctorId,
+            doctorNombre: doc.nombre,
+            tratamiento: "🔒 BLOQUEADO: " + motivo,
+            fecha,
+            hora: inicio,
+            paciente: {
+              nombre: "Bloqueo Administrativo",
+              rut: "-",
+              telefono: "-",
+              email: "-",
+            },
+            bloqueo: true,
+          };
+          addCita(cita);
+          document.getElementById("blockOverlay").remove();
+          renderAdminDashboard();
+        };
+
+        window.cancelarCitaAdmin = function (id) {
+          if (confirm("¿Estás seguro de cancelar esta cita?")) {
+            cancelCita(id);
+            renderAdminDashboard();
+          }
+        };
+      }
+
+      function adminLogout() {
+        adminAutenticado = false;
+        state = {
+          step: 1,
+          tratamiento: null,
+          doctor: null,
+          fecha: null,
+          hora: null,
+          paciente: { nombre: "", rut: "", telefono: "", email: "", notas: "" },
+        };
+        document.getElementById("pageTitle").innerHTML =
+          `<h1 class="page-title">Agenda tu consulta</h1><p class="page-subtitle">En 4 simples pasos puedes reservar tu hora con el especialista que necesitas.</p>`;
+        document.getElementById("stepsBar").innerHTML = `
+    <div class="step-dot active" id="s1">1<span class="step-label active">Tratamiento</span></div>
+    <div class="step-line pending" id="l1"></div>
+    <div class="step-dot pending" id="s2">2<span class="step-label pending">Fecha</span></div>
+    <div class="step-line pending" id="l2"></div>
+    <div class="step-dot pending" id="s3">3<span class="step-label pending">Datos</span></div>
+    <div class="step-line pending" id="l3"></div>
+    <div class="step-dot pending" id="s4">4<span class="step-label pending">Confirmar</span></div>
+  `;
+        render();
+      }
+
+      // =============================================
+      // INIT
+      // =============================================
+      render();
+    </script>
+  </body>
+</html>
